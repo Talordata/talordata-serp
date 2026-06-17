@@ -1,0 +1,1722 @@
+identity:
+  name: google_finance_markets_search
+  author: talordata
+  label:
+    en_US: Google Finance Markets Search
+    zh_Hans: Google Finance Markets Search
+description:
+  human:
+    en_US: Call the google_finance_markets engine through Talordata SERP API.
+    zh_Hans: 通过 Talordata SERP API 调用 google_finance_markets engine。
+  llm: Call Talordata SERP engine google_finance_markets and return normalized or raw SERP results.
+parameters:
+- name: trend
+  type: select
+  required: true
+  label:
+    en_US: Trend type
+    zh_Hans: 趋势类型
+  human_description:
+    en_US: Trend type parameter.
+    zh_Hans: 趋势类型 参数。
+  llm_description: Trend type parameter for the SERP request.
+  form: form
+  default: indexes
+  options:
+  - value: indexes
+    label:
+      en_US: Indexes
+      zh_Hans: Indexes
+  - value: most-active
+    label:
+      en_US: Most Active
+      zh_Hans: Most Active
+  - value: gainers
+    label:
+      en_US: Gainers
+      zh_Hans: Gainers
+  - value: losers
+    label:
+      en_US: Losers
+      zh_Hans: Losers
+  - value: climate-leaders
+    label:
+      en_US: Climate Leaders
+      zh_Hans: Climate Leaders
+  - value: cryptocurrencies
+    label:
+      en_US: Cryptocurrencies
+      zh_Hans: Cryptocurrencies
+  - value: currencies
+    label:
+      en_US: Currencies
+      zh_Hans: Currencies
+- name: hl
+  type: select
+  required: false
+  label:
+    en_US: Language
+    zh_Hans: 语言
+  human_description:
+    en_US: Language parameter.
+    zh_Hans: 语言 参数。
+  llm_description: Language parameter for the SERP request.
+  form: form
+  default: en
+  options:
+  - value: af
+    label:
+      en_US: Afrikaans
+      zh_Hans: Afrikaans
+  - value: ak
+    label:
+      en_US: Akan
+      zh_Hans: Akan
+  - value: ws
+    label:
+      en_US: Samoa
+      zh_Hans: Samoa
+  - value: am
+    label:
+      en_US: Amharic
+      zh_Hans: Amharic
+  - value: ar
+    label:
+      en_US: Arabic
+      zh_Hans: Arabic
+  - value: hy
+    label:
+      en_US: Armenian
+      zh_Hans: Armenian
+  - value: az
+    label:
+      en_US: Azerbaijani
+      zh_Hans: Azerbaijani
+  - value: ceb
+    label:
+      en_US: Binisaya
+      zh_Hans: Binisaya
+  - value: eu
+    label:
+      en_US: Basque
+      zh_Hans: Basque
+  - value: be
+    label:
+      en_US: Belarusian
+      zh_Hans: Belarusian
+  - value: bem
+    label:
+      en_US: Bemba
+      zh_Hans: Bemba
+  - value: bn
+    label:
+      en_US: Bengali
+      zh_Hans: Bengali
+  - value: bh
+    label:
+      en_US: Bihari
+      zh_Hans: Bihari
+  - value: xx-bork
+    label:
+      en_US: Bork, bork, bork!
+      zh_Hans: Bork, bork, bork!
+  - value: bs
+    label:
+      en_US: Bosnian
+      zh_Hans: Bosnian
+  - value: br
+    label:
+      en_US: Breton
+      zh_Hans: Breton
+  - value: bg
+    label:
+      en_US: Bulgarian
+      zh_Hans: Bulgarian
+  - value: bt
+    label:
+      en_US: Bhutanese
+      zh_Hans: Bhutanese
+  - value: km
+    label:
+      en_US: Cambodian
+      zh_Hans: Cambodian
+  - value: ca
+    label:
+      en_US: Catalan
+      zh_Hans: Catalan
+  - value: chr
+    label:
+      en_US: Cherokee
+      zh_Hans: Cherokee
+  - value: ny
+    label:
+      en_US: Chichewa
+      zh_Hans: Chichewa
+  - value: zh-cn
+    label:
+      en_US: Chinese (Simplified)
+      zh_Hans: Chinese (Simplified)
+  - value: zh-tw
+    label:
+      en_US: Chinese (Traditional)
+      zh_Hans: Chinese (Traditional)
+  - value: co
+    label:
+      en_US: Corsican
+      zh_Hans: Corsican
+  - value: hr
+    label:
+      en_US: Croatian
+      zh_Hans: Croatian
+  - value: cs
+    label:
+      en_US: Czech
+      zh_Hans: Czech
+  - value: da
+    label:
+      en_US: Danish
+      zh_Hans: Danish
+  - value: nl
+    label:
+      en_US: Dutch
+      zh_Hans: Dutch
+  - value: xx-elmer
+    label:
+      en_US: Elmer Fudd
+      zh_Hans: Elmer Fudd
+  - value: en
+    label:
+      en_US: English
+      zh_Hans: English
+  - value: eo
+    label:
+      en_US: Esperanto
+      zh_Hans: Esperanto
+  - value: et
+    label:
+      en_US: Estonian
+      zh_Hans: Estonian
+  - value: ee
+    label:
+      en_US: Ewe
+      zh_Hans: Ewe
+  - value: fo
+    label:
+      en_US: Faroese
+      zh_Hans: Faroese
+  - value: tl
+    label:
+      en_US: Filipino
+      zh_Hans: Filipino
+  - value: fi
+    label:
+      en_US: Finnish
+      zh_Hans: Finnish
+  - value: fr
+    label:
+      en_US: French
+      zh_Hans: French
+  - value: fy
+    label:
+      en_US: Frisian
+      zh_Hans: Frisian
+  - value: gaa
+    label:
+      en_US: Ga
+      zh_Hans: Ga
+  - value: gl
+    label:
+      en_US: Galician
+      zh_Hans: Galician
+  - value: ka
+    label:
+      en_US: Georgian
+      zh_Hans: Georgian
+  - value: de
+    label:
+      en_US: German
+      zh_Hans: German
+  - value: el
+    label:
+      en_US: Greek
+      zh_Hans: Greek
+  - value: kl
+    label:
+      en_US: Greenlandic
+      zh_Hans: Greenlandic
+  - value: gn
+    label:
+      en_US: Guarani
+      zh_Hans: Guarani
+  - value: gu
+    label:
+      en_US: Gujarati
+      zh_Hans: Gujarati
+  - value: xx-hacker
+    label:
+      en_US: Hacker
+      zh_Hans: Hacker
+  - value: ht
+    label:
+      en_US: Haitian Creole
+      zh_Hans: Haitian Creole
+  - value: ha
+    label:
+      en_US: Hausa
+      zh_Hans: Hausa
+  - value: haw
+    label:
+      en_US: Hawaiian
+      zh_Hans: Hawaiian
+  - value: iw
+    label:
+      en_US: Hebrew
+      zh_Hans: Hebrew
+  - value: he
+    label:
+      en_US: Hebrew
+      zh_Hans: Hebrew
+  - value: hi
+    label:
+      en_US: Hindi
+      zh_Hans: Hindi
+  - value: hu
+    label:
+      en_US: Hungarian
+      zh_Hans: Hungarian
+  - value: is
+    label:
+      en_US: Icelandic
+      zh_Hans: Icelandic
+  - value: ig
+    label:
+      en_US: Igbo
+      zh_Hans: Igbo
+  - value: id
+    label:
+      en_US: Indonesian
+      zh_Hans: Indonesian
+  - value: ia
+    label:
+      en_US: Interlingua
+      zh_Hans: Interlingua
+  - value: ga
+    label:
+      en_US: Irish
+      zh_Hans: Irish
+  - value: it
+    label:
+      en_US: Italian
+      zh_Hans: Italian
+  - value: ja
+    label:
+      en_US: Japanese
+      zh_Hans: Japanese
+  - value: jw
+    label:
+      en_US: Javanese
+      zh_Hans: Javanese
+  - value: kn
+    label:
+      en_US: Kannada
+      zh_Hans: Kannada
+  - value: kk
+    label:
+      en_US: Kazakh
+      zh_Hans: Kazakh
+  - value: rw
+    label:
+      en_US: Kinyarwanda
+      zh_Hans: Kinyarwanda
+  - value: rn
+    label:
+      en_US: Kirundi
+      zh_Hans: Kirundi
+  - value: xx-klingon
+    label:
+      en_US: Klingon
+      zh_Hans: Klingon
+  - value: kg
+    label:
+      en_US: Kongo
+      zh_Hans: Kongo
+  - value: ko
+    label:
+      en_US: Korean
+      zh_Hans: Korean
+  - value: kri
+    label:
+      en_US: Krio (Sierra Leone)
+      zh_Hans: Krio (Sierra Leone)
+  - value: ku
+    label:
+      en_US: Kurdish
+      zh_Hans: Kurdish
+  - value: ckb
+    label:
+      en_US: Kurdish (Soranî)
+      zh_Hans: Kurdish (Soranî)
+  - value: ky
+    label:
+      en_US: Kyrgyz
+      zh_Hans: Kyrgyz
+  - value: lo
+    label:
+      en_US: Laothian
+      zh_Hans: Laothian
+  - value: la
+    label:
+      en_US: Latin
+      zh_Hans: Latin
+  - value: lv
+    label:
+      en_US: Latvian
+      zh_Hans: Latvian
+  - value: ln
+    label:
+      en_US: Lingala
+      zh_Hans: Lingala
+  - value: lt
+    label:
+      en_US: Lithuanian
+      zh_Hans: Lithuanian
+  - value: loz
+    label:
+      en_US: Lozi
+      zh_Hans: Lozi
+  - value: lg
+    label:
+      en_US: Luganda
+      zh_Hans: Luganda
+  - value: ach
+    label:
+      en_US: Luo
+      zh_Hans: Luo
+  - value: mk
+    label:
+      en_US: Macedonian
+      zh_Hans: Macedonian
+  - value: mg
+    label:
+      en_US: Malagasy
+      zh_Hans: Malagasy
+  - value: ms
+    label:
+      en_US: Malay
+      zh_Hans: Malay
+  - value: ml
+    label:
+      en_US: Malayalam
+      zh_Hans: Malayalam
+  - value: mt
+    label:
+      en_US: Maltese
+      zh_Hans: Maltese
+  - value: mv
+    label:
+      en_US: Maldives
+      zh_Hans: Maldives
+  - value: mi
+    label:
+      en_US: Maori
+      zh_Hans: Maori
+  - value: mr
+    label:
+      en_US: Marathi
+      zh_Hans: Marathi
+  - value: mfe
+    label:
+      en_US: Mauritian Creole
+      zh_Hans: Mauritian Creole
+  - value: mo
+    label:
+      en_US: Moldavian
+      zh_Hans: Moldavian
+  - value: mn
+    label:
+      en_US: Mongolian
+      zh_Hans: Mongolian
+  - value: sr-me
+    label:
+      en_US: Montenegrin
+      zh_Hans: Montenegrin
+  - value: my
+    label:
+      en_US: Myanmar
+      zh_Hans: Myanmar
+  - value: ne
+    label:
+      en_US: Nepali
+      zh_Hans: Nepali
+  - value: pcm
+    label:
+      en_US: Nigerian Pidgin
+      zh_Hans: Nigerian Pidgin
+  - value: nso
+    label:
+      en_US: Northern Sotho
+      zh_Hans: Northern Sotho
+  - value: 'no'
+    label:
+      en_US: Norwegian
+      zh_Hans: Norwegian
+  - value: nn
+    label:
+      en_US: Norwegian (Nynorsk)
+      zh_Hans: Norwegian (Nynorsk)
+  - value: oc
+    label:
+      en_US: Occitan
+      zh_Hans: Occitan
+  - value: or
+    label:
+      en_US: Oriya
+      zh_Hans: Oriya
+  - value: om
+    label:
+      en_US: Oromo
+      zh_Hans: Oromo
+  - value: ps
+    label:
+      en_US: Pashto
+      zh_Hans: Pashto
+  - value: fa
+    label:
+      en_US: Persian
+      zh_Hans: Persian
+  - value: xx-pirate
+    label:
+      en_US: Pirate
+      zh_Hans: Pirate
+  - value: pl
+    label:
+      en_US: Polish
+      zh_Hans: Polish
+  - value: pt
+    label:
+      en_US: Portuguese
+      zh_Hans: Portuguese
+  - value: pt-br
+    label:
+      en_US: Portuguese (Brazil)
+      zh_Hans: Portuguese (Brazil)
+  - value: pt-pt
+    label:
+      en_US: Portuguese (Portugal)
+      zh_Hans: Portuguese (Portugal)
+  - value: pa
+    label:
+      en_US: Punjabi
+      zh_Hans: Punjabi
+  - value: qu
+    label:
+      en_US: Quechua
+      zh_Hans: Quechua
+  - value: ro
+    label:
+      en_US: Romanian
+      zh_Hans: Romanian
+  - value: rm
+    label:
+      en_US: Romansh
+      zh_Hans: Romansh
+  - value: nyn
+    label:
+      en_US: Runyakitara
+      zh_Hans: Runyakitara
+  - value: ru
+    label:
+      en_US: Russian
+      zh_Hans: Russian
+  - value: gd
+    label:
+      en_US: Scots Gaelic
+      zh_Hans: Scots Gaelic
+  - value: sr
+    label:
+      en_US: Serbian
+      zh_Hans: Serbian
+  - value: sh
+    label:
+      en_US: Serbo-Croatian
+      zh_Hans: Serbo-Croatian
+  - value: st
+    label:
+      en_US: Sesotho
+      zh_Hans: Sesotho
+  - value: tn
+    label:
+      en_US: Setswana
+      zh_Hans: Setswana
+  - value: crs
+    label:
+      en_US: Seychellois Creole
+      zh_Hans: Seychellois Creole
+  - value: sn
+    label:
+      en_US: Shona
+      zh_Hans: Shona
+  - value: sd
+    label:
+      en_US: Sindhi
+      zh_Hans: Sindhi
+  - value: si
+    label:
+      en_US: Sinhalese
+      zh_Hans: Sinhalese
+  - value: sk
+    label:
+      en_US: Slovak
+      zh_Hans: Slovak
+  - value: sl
+    label:
+      en_US: Slovenian
+      zh_Hans: Slovenian
+  - value: so
+    label:
+      en_US: Somali
+      zh_Hans: Somali
+  - value: es
+    label:
+      en_US: Spanish
+      zh_Hans: Spanish
+  - value: es-419
+    label:
+      en_US: Spanish (Latin American)
+      zh_Hans: Spanish (Latin American)
+  - value: su
+    label:
+      en_US: Sundanese
+      zh_Hans: Sundanese
+  - value: sw
+    label:
+      en_US: Swahili
+      zh_Hans: Swahili
+  - value: sv
+    label:
+      en_US: Swedish
+      zh_Hans: Swedish
+  - value: tg
+    label:
+      en_US: Tajik
+      zh_Hans: Tajik
+  - value: ta
+    label:
+      en_US: Tamil
+      zh_Hans: Tamil
+  - value: tt
+    label:
+      en_US: Tatar
+      zh_Hans: Tatar
+  - value: te
+    label:
+      en_US: Telugu
+      zh_Hans: Telugu
+  - value: th
+    label:
+      en_US: Thai
+      zh_Hans: Thai
+  - value: ti
+    label:
+      en_US: Tigrinya
+      zh_Hans: Tigrinya
+  - value: to
+    label:
+      en_US: Tonga
+      zh_Hans: Tonga
+  - value: lua
+    label:
+      en_US: Tshiluba
+      zh_Hans: Tshiluba
+  - value: tum
+    label:
+      en_US: Tumbuka
+      zh_Hans: Tumbuka
+  - value: tr
+    label:
+      en_US: Turkish
+      zh_Hans: Turkish
+  - value: tk
+    label:
+      en_US: Turkmen
+      zh_Hans: Turkmen
+  - value: tw
+    label:
+      en_US: Twi
+      zh_Hans: Twi
+  - value: ug
+    label:
+      en_US: Uighur
+      zh_Hans: Uighur
+  - value: uk
+    label:
+      en_US: Ukrainian
+      zh_Hans: Ukrainian
+  - value: ur
+    label:
+      en_US: Urdu
+      zh_Hans: Urdu
+  - value: uz
+    label:
+      en_US: Uzbek
+      zh_Hans: Uzbek
+  - value: vu
+    label:
+      en_US: Vanuatu
+      zh_Hans: Vanuatu
+  - value: vi
+    label:
+      en_US: Vietnamese
+      zh_Hans: Vietnamese
+  - value: cy
+    label:
+      en_US: Welsh
+      zh_Hans: Welsh
+  - value: wo
+    label:
+      en_US: Wolof
+      zh_Hans: Wolof
+  - value: xh
+    label:
+      en_US: Xhosa
+      zh_Hans: Xhosa
+  - value: yi
+    label:
+      en_US: Yiddish
+      zh_Hans: Yiddish
+  - value: yo
+    label:
+      en_US: Yoruba
+      zh_Hans: Yoruba
+  - value: zu
+    label:
+      en_US: Zulu
+      zh_Hans: Zulu
+- name: gl
+  type: select
+  required: false
+  label:
+    en_US: Country/Region
+    zh_Hans: 国家/地区
+  human_description:
+    en_US: Country/Region parameter.
+    zh_Hans: 国家/地区 参数。
+  llm_description: Country/Region parameter for the SERP request.
+  form: form
+  default: us
+  options:
+  - value: af
+    label:
+      en_US: Afghanistan
+      zh_Hans: Afghanistan
+  - value: al
+    label:
+      en_US: Albania
+      zh_Hans: Albania
+  - value: dz
+    label:
+      en_US: Algeria
+      zh_Hans: Algeria
+  - value: as
+    label:
+      en_US: American Samoa
+      zh_Hans: American Samoa
+  - value: ad
+    label:
+      en_US: Andorra
+      zh_Hans: Andorra
+  - value: ao
+    label:
+      en_US: Angola
+      zh_Hans: Angola
+  - value: ai
+    label:
+      en_US: Anguilla
+      zh_Hans: Anguilla
+  - value: aq
+    label:
+      en_US: Antarctica
+      zh_Hans: Antarctica
+  - value: ag
+    label:
+      en_US: Antigua and Barbuda
+      zh_Hans: Antigua and Barbuda
+  - value: ar
+    label:
+      en_US: Argentina
+      zh_Hans: Argentina
+  - value: am
+    label:
+      en_US: Armenia
+      zh_Hans: Armenia
+  - value: aw
+    label:
+      en_US: Aruba
+      zh_Hans: Aruba
+  - value: au
+    label:
+      en_US: Australia
+      zh_Hans: Australia
+  - value: at
+    label:
+      en_US: Austria
+      zh_Hans: Austria
+  - value: az
+    label:
+      en_US: Azerbaijan
+      zh_Hans: Azerbaijan
+  - value: bs
+    label:
+      en_US: Bahamas
+      zh_Hans: Bahamas
+  - value: bh
+    label:
+      en_US: Bahrain
+      zh_Hans: Bahrain
+  - value: bd
+    label:
+      en_US: Bangladesh
+      zh_Hans: Bangladesh
+  - value: bb
+    label:
+      en_US: Barbados
+      zh_Hans: Barbados
+  - value: by
+    label:
+      en_US: Belarus
+      zh_Hans: Belarus
+  - value: be
+    label:
+      en_US: Belgium
+      zh_Hans: Belgium
+  - value: bz
+    label:
+      en_US: Belize
+      zh_Hans: Belize
+  - value: bj
+    label:
+      en_US: Benin
+      zh_Hans: Benin
+  - value: bm
+    label:
+      en_US: Bermuda
+      zh_Hans: Bermuda
+  - value: bt
+    label:
+      en_US: Bhutan
+      zh_Hans: Bhutan
+  - value: bo
+    label:
+      en_US: Bolivia
+      zh_Hans: Bolivia
+  - value: ba
+    label:
+      en_US: Bosnia and Herzegovina
+      zh_Hans: Bosnia and Herzegovina
+  - value: bw
+    label:
+      en_US: Botswana
+      zh_Hans: Botswana
+  - value: bv
+    label:
+      en_US: Bouvet Island
+      zh_Hans: Bouvet Island
+  - value: br
+    label:
+      en_US: Brazil
+      zh_Hans: Brazil
+  - value: io
+    label:
+      en_US: British Indian Ocean Territory
+      zh_Hans: British Indian Ocean Territory
+  - value: bn
+    label:
+      en_US: Brunei Darussalam
+      zh_Hans: Brunei Darussalam
+  - value: bg
+    label:
+      en_US: Bulgaria
+      zh_Hans: Bulgaria
+  - value: bf
+    label:
+      en_US: Burkina Faso
+      zh_Hans: Burkina Faso
+  - value: bi
+    label:
+      en_US: Burundi
+      zh_Hans: Burundi
+  - value: kh
+    label:
+      en_US: Cambodia
+      zh_Hans: Cambodia
+  - value: cm
+    label:
+      en_US: Cameroon
+      zh_Hans: Cameroon
+  - value: ca
+    label:
+      en_US: Canada
+      zh_Hans: Canada
+  - value: cv
+    label:
+      en_US: Cape Verde
+      zh_Hans: Cape Verde
+  - value: ky
+    label:
+      en_US: Cayman Islands
+      zh_Hans: Cayman Islands
+  - value: cf
+    label:
+      en_US: Central African Republic
+      zh_Hans: Central African Republic
+  - value: td
+    label:
+      en_US: Chad
+      zh_Hans: Chad
+  - value: cl
+    label:
+      en_US: Chile
+      zh_Hans: Chile
+  - value: cn
+    label:
+      en_US: China
+      zh_Hans: China
+  - value: cx
+    label:
+      en_US: Christmas Island
+      zh_Hans: Christmas Island
+  - value: cc
+    label:
+      en_US: Cocos (Keeling) Islands
+      zh_Hans: Cocos (Keeling) Islands
+  - value: co
+    label:
+      en_US: Colombia
+      zh_Hans: Colombia
+  - value: km
+    label:
+      en_US: Comoros
+      zh_Hans: Comoros
+  - value: cg
+    label:
+      en_US: Congo
+      zh_Hans: Congo
+  - value: cd
+    label:
+      en_US: Congo, the Democratic Republic of the
+      zh_Hans: Congo, the Democratic Republic of the
+  - value: ck
+    label:
+      en_US: Cook Islands
+      zh_Hans: Cook Islands
+  - value: cr
+    label:
+      en_US: Costa Rica
+      zh_Hans: Costa Rica
+  - value: ci
+    label:
+      en_US: Cote D'ivoire
+      zh_Hans: Cote D'ivoire
+  - value: hr
+    label:
+      en_US: Croatia
+      zh_Hans: Croatia
+  - value: cu
+    label:
+      en_US: Cuba
+      zh_Hans: Cuba
+  - value: cy
+    label:
+      en_US: Cyprus
+      zh_Hans: Cyprus
+  - value: cz
+    label:
+      en_US: Czech Republic
+      zh_Hans: Czech Republic
+  - value: dk
+    label:
+      en_US: Denmark
+      zh_Hans: Denmark
+  - value: dj
+    label:
+      en_US: Djibouti
+      zh_Hans: Djibouti
+  - value: dm
+    label:
+      en_US: Dominica
+      zh_Hans: Dominica
+  - value: do
+    label:
+      en_US: Dominican Republic
+      zh_Hans: Dominican Republic
+  - value: ec
+    label:
+      en_US: Ecuador
+      zh_Hans: Ecuador
+  - value: eg
+    label:
+      en_US: Egypt
+      zh_Hans: Egypt
+  - value: sv
+    label:
+      en_US: El Salvador
+      zh_Hans: El Salvador
+  - value: gq
+    label:
+      en_US: Equatorial Guinea
+      zh_Hans: Equatorial Guinea
+  - value: er
+    label:
+      en_US: Eritrea
+      zh_Hans: Eritrea
+  - value: ee
+    label:
+      en_US: Estonia
+      zh_Hans: Estonia
+  - value: et
+    label:
+      en_US: Ethiopia
+      zh_Hans: Ethiopia
+  - value: fk
+    label:
+      en_US: Falkland Islands (Malvinas)
+      zh_Hans: Falkland Islands (Malvinas)
+  - value: fo
+    label:
+      en_US: Faroe Islands
+      zh_Hans: Faroe Islands
+  - value: fj
+    label:
+      en_US: Fiji
+      zh_Hans: Fiji
+  - value: fi
+    label:
+      en_US: Finland
+      zh_Hans: Finland
+  - value: fr
+    label:
+      en_US: France
+      zh_Hans: France
+  - value: gf
+    label:
+      en_US: French Guiana
+      zh_Hans: French Guiana
+  - value: pf
+    label:
+      en_US: French Polynesia
+      zh_Hans: French Polynesia
+  - value: tf
+    label:
+      en_US: French Southern Territories
+      zh_Hans: French Southern Territories
+  - value: ga
+    label:
+      en_US: Gabon
+      zh_Hans: Gabon
+  - value: gm
+    label:
+      en_US: Gambia
+      zh_Hans: Gambia
+  - value: ge
+    label:
+      en_US: Georgia
+      zh_Hans: Georgia
+  - value: de
+    label:
+      en_US: Germany
+      zh_Hans: Germany
+  - value: gh
+    label:
+      en_US: Ghana
+      zh_Hans: Ghana
+  - value: gi
+    label:
+      en_US: Gibraltar
+      zh_Hans: Gibraltar
+  - value: gr
+    label:
+      en_US: Greece
+      zh_Hans: Greece
+  - value: gl
+    label:
+      en_US: Greenland
+      zh_Hans: Greenland
+  - value: gd
+    label:
+      en_US: Grenada
+      zh_Hans: Grenada
+  - value: gp
+    label:
+      en_US: Guadeloupe
+      zh_Hans: Guadeloupe
+  - value: gu
+    label:
+      en_US: Guam
+      zh_Hans: Guam
+  - value: gt
+    label:
+      en_US: Guatemala
+      zh_Hans: Guatemala
+  - value: gg
+    label:
+      en_US: Guernsey
+      zh_Hans: Guernsey
+  - value: gn
+    label:
+      en_US: Guinea
+      zh_Hans: Guinea
+  - value: gw
+    label:
+      en_US: Guinea-Bissau
+      zh_Hans: Guinea-Bissau
+  - value: gy
+    label:
+      en_US: Guyana
+      zh_Hans: Guyana
+  - value: ht
+    label:
+      en_US: Haiti
+      zh_Hans: Haiti
+  - value: hm
+    label:
+      en_US: Heard Island and Mcdonald Islands
+      zh_Hans: Heard Island and Mcdonald Islands
+  - value: va
+    label:
+      en_US: Holy See (Vatican City State)
+      zh_Hans: Holy See (Vatican City State)
+  - value: hn
+    label:
+      en_US: Honduras
+      zh_Hans: Honduras
+  - value: hk
+    label:
+      en_US: Hong Kong
+      zh_Hans: Hong Kong
+  - value: hu
+    label:
+      en_US: Hungary
+      zh_Hans: Hungary
+  - value: is
+    label:
+      en_US: Iceland
+      zh_Hans: Iceland
+  - value: in
+    label:
+      en_US: India
+      zh_Hans: India
+  - value: id
+    label:
+      en_US: Indonesia
+      zh_Hans: Indonesia
+  - value: ir
+    label:
+      en_US: Iran, Islamic Republic of
+      zh_Hans: Iran, Islamic Republic of
+  - value: iq
+    label:
+      en_US: Iraq
+      zh_Hans: Iraq
+  - value: ie
+    label:
+      en_US: Ireland
+      zh_Hans: Ireland
+  - value: im
+    label:
+      en_US: Isle of Man
+      zh_Hans: Isle of Man
+  - value: il
+    label:
+      en_US: Israel
+      zh_Hans: Israel
+  - value: it
+    label:
+      en_US: Italy
+      zh_Hans: Italy
+  - value: je
+    label:
+      en_US: Jersey
+      zh_Hans: Jersey
+  - value: jm
+    label:
+      en_US: Jamaica
+      zh_Hans: Jamaica
+  - value: jp
+    label:
+      en_US: Japan
+      zh_Hans: Japan
+  - value: jo
+    label:
+      en_US: Jordan
+      zh_Hans: Jordan
+  - value: kz
+    label:
+      en_US: Kazakhstan
+      zh_Hans: Kazakhstan
+  - value: ke
+    label:
+      en_US: Kenya
+      zh_Hans: Kenya
+  - value: ki
+    label:
+      en_US: Kiribati
+      zh_Hans: Kiribati
+  - value: kp
+    label:
+      en_US: Korea, Democratic People's Republic of
+      zh_Hans: Korea, Democratic People's Republic of
+  - value: kr
+    label:
+      en_US: Korea, Republic of
+      zh_Hans: Korea, Republic of
+  - value: kw
+    label:
+      en_US: Kuwait
+      zh_Hans: Kuwait
+  - value: kg
+    label:
+      en_US: Kyrgyzstan
+      zh_Hans: Kyrgyzstan
+  - value: la
+    label:
+      en_US: Lao People's Democratic Republic
+      zh_Hans: Lao People's Democratic Republic
+  - value: lv
+    label:
+      en_US: Latvia
+      zh_Hans: Latvia
+  - value: lb
+    label:
+      en_US: Lebanon
+      zh_Hans: Lebanon
+  - value: ls
+    label:
+      en_US: Lesotho
+      zh_Hans: Lesotho
+  - value: lr
+    label:
+      en_US: Liberia
+      zh_Hans: Liberia
+  - value: ly
+    label:
+      en_US: Libyan Arab Jamahiriya
+      zh_Hans: Libyan Arab Jamahiriya
+  - value: li
+    label:
+      en_US: Liechtenstein
+      zh_Hans: Liechtenstein
+  - value: lt
+    label:
+      en_US: Lithuania
+      zh_Hans: Lithuania
+  - value: lu
+    label:
+      en_US: Luxembourg
+      zh_Hans: Luxembourg
+  - value: mo
+    label:
+      en_US: Macao
+      zh_Hans: Macao
+  - value: mk
+    label:
+      en_US: Macedonia, the Former Yugosalv Republic of
+      zh_Hans: Macedonia, the Former Yugosalv Republic of
+  - value: mg
+    label:
+      en_US: Madagascar
+      zh_Hans: Madagascar
+  - value: mw
+    label:
+      en_US: Malawi
+      zh_Hans: Malawi
+  - value: my
+    label:
+      en_US: Malaysia
+      zh_Hans: Malaysia
+  - value: mv
+    label:
+      en_US: Maldives
+      zh_Hans: Maldives
+  - value: ml
+    label:
+      en_US: Mali
+      zh_Hans: Mali
+  - value: mt
+    label:
+      en_US: Malta
+      zh_Hans: Malta
+  - value: mh
+    label:
+      en_US: Marshall Islands
+      zh_Hans: Marshall Islands
+  - value: mq
+    label:
+      en_US: Martinique
+      zh_Hans: Martinique
+  - value: mr
+    label:
+      en_US: Mauritania
+      zh_Hans: Mauritania
+  - value: mu
+    label:
+      en_US: Mauritius
+      zh_Hans: Mauritius
+  - value: yt
+    label:
+      en_US: Mayotte
+      zh_Hans: Mayotte
+  - value: mx
+    label:
+      en_US: Mexico
+      zh_Hans: Mexico
+  - value: fm
+    label:
+      en_US: Micronesia, Federated States of
+      zh_Hans: Micronesia, Federated States of
+  - value: md
+    label:
+      en_US: Moldova, Republic of
+      zh_Hans: Moldova, Republic of
+  - value: mc
+    label:
+      en_US: Monaco
+      zh_Hans: Monaco
+  - value: mn
+    label:
+      en_US: Mongolia
+      zh_Hans: Mongolia
+  - value: me
+    label:
+      en_US: Montenegro
+      zh_Hans: Montenegro
+  - value: ms
+    label:
+      en_US: Montserrat
+      zh_Hans: Montserrat
+  - value: ma
+    label:
+      en_US: Morocco
+      zh_Hans: Morocco
+  - value: mz
+    label:
+      en_US: Mozambique
+      zh_Hans: Mozambique
+  - value: mm
+    label:
+      en_US: Myanmar
+      zh_Hans: Myanmar
+  - value: na
+    label:
+      en_US: Namibia
+      zh_Hans: Namibia
+  - value: nr
+    label:
+      en_US: Nauru
+      zh_Hans: Nauru
+  - value: np
+    label:
+      en_US: Nepal
+      zh_Hans: Nepal
+  - value: nl
+    label:
+      en_US: Netherlands
+      zh_Hans: Netherlands
+  - value: an
+    label:
+      en_US: Netherlands Antilles
+      zh_Hans: Netherlands Antilles
+  - value: nc
+    label:
+      en_US: New Caledonia
+      zh_Hans: New Caledonia
+  - value: nz
+    label:
+      en_US: New Zealand
+      zh_Hans: New Zealand
+  - value: ni
+    label:
+      en_US: Nicaragua
+      zh_Hans: Nicaragua
+  - value: ne
+    label:
+      en_US: Niger
+      zh_Hans: Niger
+  - value: ng
+    label:
+      en_US: Nigeria
+      zh_Hans: Nigeria
+  - value: nu
+    label:
+      en_US: Niue
+      zh_Hans: Niue
+  - value: nf
+    label:
+      en_US: Norfolk Island
+      zh_Hans: Norfolk Island
+  - value: mp
+    label:
+      en_US: Northern Mariana Islands
+      zh_Hans: Northern Mariana Islands
+  - value: 'no'
+    label:
+      en_US: Norway
+      zh_Hans: Norway
+  - value: om
+    label:
+      en_US: Oman
+      zh_Hans: Oman
+  - value: pk
+    label:
+      en_US: Pakistan
+      zh_Hans: Pakistan
+  - value: pw
+    label:
+      en_US: Palau
+      zh_Hans: Palau
+  - value: ps
+    label:
+      en_US: Palestinian Territory, Occupied
+      zh_Hans: Palestinian Territory, Occupied
+  - value: pa
+    label:
+      en_US: Panama
+      zh_Hans: Panama
+  - value: pg
+    label:
+      en_US: Papua New Guinea
+      zh_Hans: Papua New Guinea
+  - value: py
+    label:
+      en_US: Paraguay
+      zh_Hans: Paraguay
+  - value: pe
+    label:
+      en_US: Peru
+      zh_Hans: Peru
+  - value: ph
+    label:
+      en_US: Philippines
+      zh_Hans: Philippines
+  - value: pn
+    label:
+      en_US: Pitcairn
+      zh_Hans: Pitcairn
+  - value: pl
+    label:
+      en_US: Poland
+      zh_Hans: Poland
+  - value: pt
+    label:
+      en_US: Portugal
+      zh_Hans: Portugal
+  - value: pr
+    label:
+      en_US: Puerto Rico
+      zh_Hans: Puerto Rico
+  - value: qa
+    label:
+      en_US: Qatar
+      zh_Hans: Qatar
+  - value: re
+    label:
+      en_US: Reunion
+      zh_Hans: Reunion
+  - value: ro
+    label:
+      en_US: Romania
+      zh_Hans: Romania
+  - value: ru
+    label:
+      en_US: Russian Federation
+      zh_Hans: Russian Federation
+  - value: rw
+    label:
+      en_US: Rwanda
+      zh_Hans: Rwanda
+  - value: sh
+    label:
+      en_US: Saint Helena
+      zh_Hans: Saint Helena
+  - value: kn
+    label:
+      en_US: Saint Kitts and Nevis
+      zh_Hans: Saint Kitts and Nevis
+  - value: lc
+    label:
+      en_US: Saint Lucia
+      zh_Hans: Saint Lucia
+  - value: pm
+    label:
+      en_US: Saint Pierre and Miquelon
+      zh_Hans: Saint Pierre and Miquelon
+  - value: vc
+    label:
+      en_US: Saint Vincent and the Grenadines
+      zh_Hans: Saint Vincent and the Grenadines
+  - value: ws
+    label:
+      en_US: Samoa
+      zh_Hans: Samoa
+  - value: sm
+    label:
+      en_US: San Marino
+      zh_Hans: San Marino
+  - value: st
+    label:
+      en_US: Sao Tome and Principe
+      zh_Hans: Sao Tome and Principe
+  - value: sa
+    label:
+      en_US: Saudi Arabia
+      zh_Hans: Saudi Arabia
+  - value: sn
+    label:
+      en_US: Senegal
+      zh_Hans: Senegal
+  - value: rs
+    label:
+      en_US: Serbia
+      zh_Hans: Serbia
+  - value: sc
+    label:
+      en_US: Seychelles
+      zh_Hans: Seychelles
+  - value: sl
+    label:
+      en_US: Sierra Leone
+      zh_Hans: Sierra Leone
+  - value: sg
+    label:
+      en_US: Singapore
+      zh_Hans: Singapore
+  - value: sk
+    label:
+      en_US: Slovakia
+      zh_Hans: Slovakia
+  - value: si
+    label:
+      en_US: Slovenia
+      zh_Hans: Slovenia
+  - value: sb
+    label:
+      en_US: Solomon Islands
+      zh_Hans: Solomon Islands
+  - value: so
+    label:
+      en_US: Somalia
+      zh_Hans: Somalia
+  - value: za
+    label:
+      en_US: South Africa
+      zh_Hans: South Africa
+  - value: gs
+    label:
+      en_US: South Georgia and the South Sandwich Islands
+      zh_Hans: South Georgia and the South Sandwich Islands
+  - value: es
+    label:
+      en_US: Spain
+      zh_Hans: Spain
+  - value: lk
+    label:
+      en_US: Sri Lanka
+      zh_Hans: Sri Lanka
+  - value: sd
+    label:
+      en_US: Sudan
+      zh_Hans: Sudan
+  - value: sr
+    label:
+      en_US: Suriname
+      zh_Hans: Suriname
+  - value: sj
+    label:
+      en_US: Svalbard and Jan Mayen
+      zh_Hans: Svalbard and Jan Mayen
+  - value: sz
+    label:
+      en_US: Swaziland
+      zh_Hans: Swaziland
+  - value: se
+    label:
+      en_US: Sweden
+      zh_Hans: Sweden
+  - value: ch
+    label:
+      en_US: Switzerland
+      zh_Hans: Switzerland
+  - value: sy
+    label:
+      en_US: Syrian Arab Republic
+      zh_Hans: Syrian Arab Republic
+  - value: tw
+    label:
+      en_US: Taiwan, Province of China
+      zh_Hans: Taiwan, Province of China
+  - value: tj
+    label:
+      en_US: Tajikistan
+      zh_Hans: Tajikistan
+  - value: tz
+    label:
+      en_US: Tanzania, United Republic of
+      zh_Hans: Tanzania, United Republic of
+  - value: th
+    label:
+      en_US: Thailand
+      zh_Hans: Thailand
+  - value: tl
+    label:
+      en_US: Timor-Leste
+      zh_Hans: Timor-Leste
+  - value: tg
+    label:
+      en_US: Togo
+      zh_Hans: Togo
+  - value: tk
+    label:
+      en_US: Tokelau
+      zh_Hans: Tokelau
+  - value: to
+    label:
+      en_US: Tonga
+      zh_Hans: Tonga
+  - value: tt
+    label:
+      en_US: Trinidad and Tobago
+      zh_Hans: Trinidad and Tobago
+  - value: tn
+    label:
+      en_US: Tunisia
+      zh_Hans: Tunisia
+  - value: tr
+    label:
+      en_US: Turkiye
+      zh_Hans: Turkiye
+  - value: tm
+    label:
+      en_US: Turkmenistan
+      zh_Hans: Turkmenistan
+  - value: tc
+    label:
+      en_US: Turks and Caicos Islands
+      zh_Hans: Turks and Caicos Islands
+  - value: tv
+    label:
+      en_US: Tuvalu
+      zh_Hans: Tuvalu
+  - value: ug
+    label:
+      en_US: Uganda
+      zh_Hans: Uganda
+  - value: ua
+    label:
+      en_US: Ukraine
+      zh_Hans: Ukraine
+  - value: ae
+    label:
+      en_US: United Arab Emirates
+      zh_Hans: United Arab Emirates
+  - value: uk
+    label:
+      en_US: United Kingdom
+      zh_Hans: United Kingdom
+  - value: gb
+    label:
+      en_US: United Kingdom
+      zh_Hans: United Kingdom
+  - value: us
+    label:
+      en_US: United States
+      zh_Hans: United States
+  - value: um
+    label:
+      en_US: United States Minor Outlying Islands
+      zh_Hans: United States Minor Outlying Islands
+  - value: uy
+    label:
+      en_US: Uruguay
+      zh_Hans: Uruguay
+  - value: uz
+    label:
+      en_US: Uzbekistan
+      zh_Hans: Uzbekistan
+  - value: vu
+    label:
+      en_US: Vanuatu
+      zh_Hans: Vanuatu
+  - value: ve
+    label:
+      en_US: Venezuela
+      zh_Hans: Venezuela
+  - value: vn
+    label:
+      en_US: Viet Nam
+      zh_Hans: Viet Nam
+  - value: vg
+    label:
+      en_US: Virgin Islands, British
+      zh_Hans: Virgin Islands, British
+  - value: vi
+    label:
+      en_US: Virgin Islands, U.S.
+      zh_Hans: Virgin Islands, U.S.
+  - value: wf
+    label:
+      en_US: Wallis and Futuna
+      zh_Hans: Wallis and Futuna
+  - value: eh
+    label:
+      en_US: Western Sahara
+      zh_Hans: Western Sahara
+  - value: ye
+    label:
+      en_US: Yemen
+      zh_Hans: Yemen
+  - value: zm
+    label:
+      en_US: Zambia
+      zh_Hans: Zambia
+  - value: zw
+    label:
+      en_US: Zimbabwe
+      zh_Hans: Zimbabwe
+- name: no_cache
+  type: boolean
+  required: false
+  label:
+    en_US: No Cache
+    zh_Hans: 禁用缓存
+  human_description:
+    en_US: No Cache parameter.
+    zh_Hans: 禁用缓存 参数。
+  llm_description: No Cache parameter for the SERP request.
+  form: form
+  default: false
+- name: index_market
+  type: select
+  required: false
+  label:
+    en_US: Index market
+    zh_Hans: 指数市场
+  human_description:
+    en_US: Index market parameter.
+    zh_Hans: 指数市场 参数。
+  llm_description: Index market parameter for the SERP request.
+  form: form
+  options:
+  - value: americas
+    label:
+      en_US: Americas
+      zh_Hans: Americas
+  - value: europe-middle-east-africa
+    label:
+      en_US: Europe, Middle East & Africa
+      zh_Hans: Europe, Middle East & Africa
+  - value: asia-pacific
+    label:
+      en_US: Asia-Pacific
+      zh_Hans: Asia-Pacific
+extra:
+  python:
+    source: tools/google_finance_markets_search.py

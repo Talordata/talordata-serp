@@ -1,0 +1,336 @@
+identity:
+  name: yandex_search
+  author: talordata
+  label:
+    en_US: Yandex Search
+    zh_Hans: Yandex Search
+description:
+  human:
+    en_US: Call the yandex engine through Talordata SERP API.
+    zh_Hans: 通过 Talordata SERP API 调用 yandex engine。
+  llm: Call Talordata SERP engine yandex and return normalized or raw SERP results.
+parameters:
+- name: text
+  type: string
+  required: true
+  label:
+    en_US: Search Query
+    zh_Hans: 搜索关键词
+  human_description:
+    en_US: 'The search keyword for Yandex requests. Example: pizza.'
+    zh_Hans: Yandex 请求使用的搜索关键词，例如 pizza。
+  llm_description: Search Query parameter for the SERP request.
+  form: form
+- name: lr
+  type: select
+  required: false
+  label:
+    en_US: Language Restriction
+    zh_Hans: 区域 ID
+  human_description:
+    en_US: Language Restriction parameter.
+    zh_Hans: 区域 ID 参数。
+  llm_description: Language Restriction parameter for the SERP request.
+  form: form
+  options:
+  - value: ''
+    label:
+      en_US: Default
+      zh_Hans: Default
+  - value: '84'
+    label:
+      en_US: United States
+      zh_Hans: United States
+  - value: '102'
+    label:
+      en_US: United Kingdom
+      zh_Hans: United Kingdom
+  - value: '104'
+    label:
+      en_US: Canada
+      zh_Hans: Canada
+  - value: '126'
+    label:
+      en_US: Germany
+      zh_Hans: Germany
+  - value: '124'
+    label:
+      en_US: France
+      zh_Hans: France
+  - value: '983'
+    label:
+      en_US: Spain
+      zh_Hans: Spain
+  - value: '205'
+    label:
+      en_US: Italy
+      zh_Hans: Italy
+  - value: '115'
+    label:
+      en_US: Turkey
+      zh_Hans: Turkey
+  - value: '10063'
+    label:
+      en_US: Brazil
+      zh_Hans: Brazil
+  - value: '21'
+    label:
+      en_US: China
+      zh_Hans: China
+  - value: '143'
+    label:
+      en_US: Japan
+      zh_Hans: Japan
+  - value: '117'
+    label:
+      en_US: South Korea
+      zh_Hans: South Korea
+  - value: '994'
+    label:
+      en_US: India
+      zh_Hans: India
+  - value: '213'
+    label:
+      en_US: Moscow
+      zh_Hans: Moscow
+  - value: '2'
+    label:
+      en_US: Saint Petersburg
+      zh_Hans: Saint Petersburg
+  - value: '157'
+    label:
+      en_US: Minsk
+      zh_Hans: Minsk
+  - value: '187'
+    label:
+      en_US: Kyiv
+      zh_Hans: Kyiv
+  - value: '159'
+    label:
+      en_US: Kazakhstan
+      zh_Hans: Kazakhstan
+  - value: '11316'
+    label:
+      en_US: Almaty
+      zh_Hans: Almaty
+  - value: '47'
+    label:
+      en_US: Novosibirsk
+      zh_Hans: Novosibirsk
+  - value: '65'
+    label:
+      en_US: Yekaterinburg
+      zh_Hans: Yekaterinburg
+  - value: '54'
+    label:
+      en_US: Nizhny Novgorod
+      zh_Hans: Nizhny Novgorod
+  - value: '43'
+    label:
+      en_US: Kazan
+      zh_Hans: Kazan
+  - value: '39'
+    label:
+      en_US: Rostov-on-Don
+      zh_Hans: Rostov-on-Don
+  - value: '51'
+    label:
+      en_US: Samara
+      zh_Hans: Samara
+  - value: '62'
+    label:
+      en_US: Krasnoyarsk
+      zh_Hans: Krasnoyarsk
+  - value: '66'
+    label:
+      en_US: Vladivostok
+      zh_Hans: Vladivostok
+- name: yandex_domain
+  type: select
+  required: false
+  label:
+    en_US: Yandex domain
+    zh_Hans: Yandex 域名
+  human_description:
+    en_US: Yandex domain parameter.
+    zh_Hans: Yandex 域名 参数。
+  llm_description: Yandex domain parameter for the SERP request.
+  form: form
+  default: yandex.com
+  options:
+  - value: yandex.com
+    label:
+      en_US: yandex.com
+      zh_Hans: yandex.com
+  - value: yandex.ru
+    label:
+      en_US: yandex.ru
+      zh_Hans: yandex.ru
+  - value: yandex.by
+    label:
+      en_US: yandex.by
+      zh_Hans: yandex.by
+  - value: yandex.kz
+    label:
+      en_US: yandex.kz
+      zh_Hans: yandex.kz
+  - value: yandex.ua
+    label:
+      en_US: yandex.ua
+      zh_Hans: yandex.ua
+  - value: yandex.com.tr
+    label:
+      en_US: yandex.com.tr
+      zh_Hans: yandex.com.tr
+- name: lang
+  type: select
+  required: false
+  label:
+    en_US: Language
+    zh_Hans: 语言
+  human_description:
+    en_US: Language parameter.
+    zh_Hans: 语言 参数。
+  llm_description: Language parameter for the SERP request.
+  form: form
+  default: en
+  options:
+  - value: ru
+    label:
+      en_US: Russian
+      zh_Hans: Russian
+  - value: en
+    label:
+      en_US: English
+      zh_Hans: English
+  - value: uk
+    label:
+      en_US: Ukrainian
+      zh_Hans: Ukrainian
+  - value: be
+    label:
+      en_US: Belarusian
+      zh_Hans: Belarusian
+  - value: kk
+    label:
+      en_US: Kazakh
+      zh_Hans: Kazakh
+  - value: tt
+    label:
+      en_US: Tatar
+      zh_Hans: Tatar
+  - value: az
+    label:
+      en_US: Azerbaijani
+      zh_Hans: Azerbaijani
+  - value: de
+    label:
+      en_US: German
+      zh_Hans: German
+  - value: fr
+    label:
+      en_US: French
+      zh_Hans: French
+  - value: it
+    label:
+      en_US: Italian
+      zh_Hans: Italian
+  - value: es
+    label:
+      en_US: Spanish
+      zh_Hans: Spanish
+  - value: pt
+    label:
+      en_US: Portuguese
+      zh_Hans: Portuguese
+  - value: tr
+    label:
+      en_US: Turkish
+      zh_Hans: Turkish
+- name: within
+  type: select
+  required: false
+  label:
+    en_US: Time Range
+    zh_Hans: 时间范围
+  human_description:
+    en_US: Time Range parameter.
+    zh_Hans: 时间范围 参数。
+  llm_description: Time Range parameter for the SERP request.
+  form: form
+  options:
+  - value: '0'
+    label:
+      en_US: All time
+      zh_Hans: All time
+  - value: '77'
+    label:
+      en_US: Last day
+      zh_Hans: Last day
+  - value: '1'
+    label:
+      en_US: Last 2 weeks
+      zh_Hans: Last 2 weeks
+  - value: '2'
+    label:
+      en_US: Last month
+      zh_Hans: Last month
+- name: rstr
+  type: select
+  required: false
+  label:
+    en_US: Restriction
+    zh_Hans: 严格区域/安全
+  human_description:
+    en_US: Restriction parameter.
+    zh_Hans: 严格区域/安全 参数。
+  llm_description: Restriction parameter for the SERP request.
+  form: form
+  options:
+  - value: 'true'
+    label:
+      en_US: 'On'
+      zh_Hans: 'On'
+  - value: 'false'
+    label:
+      en_US: 'Off'
+      zh_Hans: 'Off'
+- name: p
+  type: number
+  required: false
+  label:
+    en_US: Page
+    zh_Hans: 页码
+  human_description:
+    en_US: Page parameter.
+    zh_Hans: 页码 参数。
+  llm_description: Page parameter for the SERP request.
+  form: form
+  default: 0
+- name: render_js
+  type: boolean
+  required: false
+  label:
+    en_US: Render JS
+    zh_Hans: 渲染 JS
+  human_description:
+    en_US: Controls whether the upstream page should execute JavaScript before returning results.
+    zh_Hans: 控制上游页面是否在返回结果前执行 JavaScript。
+  llm_description: Render JS parameter for the SERP request.
+  form: form
+  default: false
+- name: no_cache
+  type: boolean
+  required: false
+  label:
+    en_US: No Cache
+    zh_Hans: 禁用缓存
+  human_description:
+    en_US: When enabled, the adapter returns a fresh preview result.
+    zh_Hans: 开启后将请求即时结果，不使用缓存预览。
+  llm_description: No Cache parameter for the SERP request.
+  form: form
+  default: false
+extra:
+  python:
+    source: tools/yandex_search.py

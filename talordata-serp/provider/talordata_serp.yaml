@@ -1,0 +1,62 @@
+identity:
+  author: talordata
+  name: talordata_serp
+  label:
+    en_US: Talordata SERP
+    zh_Hans: Talordata SERP
+  description:
+    en_US: Use Talordata SERP API in Dify workflows and agents.
+    zh_Hans: 在 Dify 工作流和智能体中使用 Talordata SERP API。
+  icon: icon.svg
+credentials_for_provider:
+  serp_api_key:
+    type: secret-input
+    required: true
+    label:
+      en_US: SERP API Key
+      zh_Hans: SERP API Key
+    placeholder:
+      en_US: sk_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+      zh_Hans: sk_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+    help:
+      en_US: Enter the Talordata SERP API key generated in your Talordata account.
+      zh_Hans: 输入你在 Talordata 账户中生成的 SERP API Key。
+tools:
+- tools/google_search.yaml
+- tools/google_ai_mode_search.yaml
+- tools/google_finance_search.yaml
+- tools/google_finance_markets_search.yaml
+- tools/google_flights_search.yaml
+- tools/google_hotels_search.yaml
+- tools/google_image_search.yaml
+- tools/google_jobs_search.yaml
+- tools/google_lens_search.yaml
+- tools/google_local_search.yaml
+- tools/google_maps_search.yaml
+- tools/google_news_search.yaml
+- tools/google_patents_search.yaml
+- tools/google_patents_details_search.yaml
+- tools/google_play_search.yaml
+- tools/google_play_books_search.yaml
+- tools/google_play_games_search.yaml
+- tools/google_play_movies_search.yaml
+- tools/google_play_product_search.yaml
+- tools/google_scholar_search.yaml
+- tools/google_scholar_author_search.yaml
+- tools/google_scholar_cite_search.yaml
+- tools/google_shopping_search.yaml
+- tools/google_trends_search.yaml
+- tools/google_videos_search.yaml
+- tools/google_web_search.yaml
+- tools/bing_search.yaml
+- tools/bing_image_search.yaml
+- tools/bing_maps_search.yaml
+- tools/bing_news_search.yaml
+- tools/bing_shopping_search.yaml
+- tools/bing_videos_search.yaml
+- tools/yandex_search.yaml
+- tools/duckduckgo_search.yaml
+- tools/raw_serp_request.yaml
+extra:
+  python:
+    source: provider/talordata_serp.py

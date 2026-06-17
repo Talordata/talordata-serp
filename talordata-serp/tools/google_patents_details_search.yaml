@@ -1,0 +1,38 @@
+identity:
+  name: google_patents_details_search
+  author: talordata
+  label:
+    en_US: Google Patents Details Search
+    zh_Hans: Google Patents Details Search
+description:
+  human:
+    en_US: Call the google_patents_details engine through Talordata SERP API.
+    zh_Hans: 通过 Talordata SERP API 调用 google_patents_details engine。
+  llm: Call Talordata SERP engine google_patents_details and return normalized or raw SERP results.
+parameters:
+- name: patent_id
+  type: string
+  required: true
+  label:
+    en_US: Patent ID
+    zh_Hans: 专利号
+  human_description:
+    en_US: Patent ID parameter.
+    zh_Hans: 专利号 参数。
+  llm_description: Patent ID parameter for the SERP request.
+  form: form
+- name: no_cache
+  type: boolean
+  required: false
+  label:
+    en_US: No Cache
+    zh_Hans: 禁用缓存
+  human_description:
+    en_US: When enabled, the adapter returns a fresh preview result.
+    zh_Hans: 开启后将请求即时结果，不使用缓存预览。
+  llm_description: No Cache parameter for the SERP request.
+  form: form
+  default: false
+extra:
+  python:
+    source: tools/google_patents_details_search.py

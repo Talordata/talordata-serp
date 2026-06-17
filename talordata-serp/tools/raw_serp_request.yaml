@@ -1,0 +1,48 @@
+identity:
+  name: raw_serp_request
+  author: talordata
+  label:
+    en_US: Raw SERP Request
+    zh_Hans: 原始 SERP 请求
+description:
+  human:
+    en_US: Call any supported Talordata SERP engine with raw parameters.
+    zh_Hans: 使用原始参数调用任意 Talordata SERP engine。
+  llm: Call a Talordata SERP engine with engine, query, and a JSON object of additional request parameters.
+parameters:
+  - name: engine
+    type: string
+    required: true
+    label:
+      en_US: Engine
+      zh_Hans: 搜索引擎
+    human_description:
+      en_US: SERP engine key, for example google, bing, bing_images, google_news.
+      zh_Hans: SERP engine key，例如 google、bing、bing_images、google_news。
+    llm_description: SERP engine key.
+    form: llm
+  - name: q
+    type: string
+    required: false
+    label:
+      en_US: Query
+      zh_Hans: 搜索关键词
+    human_description:
+      en_US: Search query. Some engines may use a different query field.
+      zh_Hans: 搜索关键词。部分 engine 可能使用不同查询字段。
+    llm_description: Search query when the selected engine supports q.
+    form: llm
+  - name: params_json
+    type: string
+    required: false
+    label:
+      en_US: Extra Parameters JSON
+      zh_Hans: 额外参数 JSON
+    human_description:
+      en_US: JSON object of additional SERP parameters, for example {"gl":"us","hl":"en","num":10}.
+      zh_Hans: 额外 SERP 参数 JSON 对象，例如 {"gl":"us","hl":"en","num":10}。
+    llm_description: A JSON object of extra SERP request parameters.
+    form: llm
+extra:
+  python:
+    source: tools/raw_serp_request.py
