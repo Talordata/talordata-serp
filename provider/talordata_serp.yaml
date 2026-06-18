@@ -7,7 +7,7 @@ identity:
   description:
     en_US: Use Talordata SERP API in Dify workflows and agents.
     zh_Hans: 在 Dify 工作流和智能体中使用 Talordata SERP API。
-  icon: icon.svg
+  icon: icon.png
 credentials_for_provider:
   serp_api_key:
     type: secret-input

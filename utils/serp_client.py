@@ -44,6 +44,7 @@ class SerpClient:
             data=urlencode(cleaned).encode("utf-8"),
             headers={
                 "Authorization": f"Bearer {self.api_key}",
+                "Origin": "dify",
                 "User-Agent": "Talordata-Dify-Plugin/0.1.7",
                 "Accept": "application/json",
                 "Content-Type": "application/x-www-form-urlencoded",

@@ -8,7 +8,7 @@ label:
 description:
   en_US: Real-time search results from Talordata SERP API for Dify workflows and agents.
   zh_Hans: 为 Dify 工作流和智能体提供 Talordata SERP 实时搜索结果。
-icon: icon.svg
+icon: icon.png
 resource:
   memory: 268435456
   permission: {}

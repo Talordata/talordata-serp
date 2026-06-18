@@ -42,6 +42,7 @@ def test_serp_client_posts_form_encoded_request():
     request, timeout = calls[0]
     assert request.full_url == ENDPOINT
     assert request.headers["Authorization"] == "Bearer sk_test"
+    assert request.headers["Origin"] == "dify"
     assert request.headers["User-agent"] == "Talordata-Dify-Plugin/0.1.7"
     assert request.headers["Accept"] == "application/json"
     assert request.headers["Content-type"] == "application/x-www-form-urlencoded"
