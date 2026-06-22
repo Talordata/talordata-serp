@@ -16,13 +16,12 @@ Do not use a Talordata login JWT token. Login JWT is only for Talordata dashboar
 
 ## Actions
 
-This plugin exposes one Dify action for each enabled SERP engine in
-`talor-pay-package-view/configs/serp_schemas/engines`, plus a raw request action
-for advanced use.
+This plugin exposes one Dify action for each supported Talordata SERP engine,
+plus a raw request action for advanced use.
 
 Generated actions include:
 
-- Google: `google_search`, `google_image_search`, `google_news_search`, `google_shopping_search`, `google_maps_search`, `google_scholar_search`, `google_trends_search`, `google_play_product_search`, and the other enabled Google engines in the schema directory
+- Google: `google_search`, `google_image_search`, `google_news_search`, `google_shopping_search`, `google_maps_search`, `google_scholar_search`, `google_trends_search`, `google_play_product_search`, and other supported Google engines
 - Bing: `bing_search`, `bing_image_search`, `bing_maps_search`, `bing_news_search`, `bing_shopping_search`, `bing_videos_search`
 - Other engines: `yandex_search`, `duckduckgo_search`
 - Advanced: `raw_serp_request`
@@ -124,7 +123,12 @@ Use `raw_serp_request` when advanced engine-specific parameters are required:
 
 ## Support
 
-For issues with the Dify plugin package, report an issue in the GitHub repository where this plugin package is maintained.
+For issues with the Dify plugin package, report an issue in the GitHub
+repository:
+
+```text
+https://github.com/Talordata/talordata-serp
+```
 
 For Talordata SERP API account, quota, or API key issues, contact Talordata support through the support channel listed in your Talordata account or dashboard.
 
@@ -163,20 +167,10 @@ version in `manifest.yaml`, and attach the generated `.difypkg` file as a
 release asset.
 
 ```powershell
-cd C:\Users\Administrator\Desktop\tolar\dify-plugins\talordata-serp
+cd C:\path\to\talordata-serp
 .\scripts\publish_github_release.ps1
 ```
 
 For version `0.1.7`, this creates or updates the `v0.1.7` release in
 `Talordata/talordata-serp` with `talordata-serp.difypkg` attached. The script
 requires `GH_TOKEN` or `GITHUB_TOKEN` in the current PowerShell session.
-
-## Development Notes
-
-The generated tools are based on Talordata SERP schema files. The internal
-Talordata services that define or consume those schemas include:
-
-- `talor-webui-dashboard/api/serp.js`
-- `talor-pay-package-view/internal/router/serp_router.go`
-- `talor-pay-package-view/internal/serp/service/playground_service.go`
-- `talor-pay-package-view/configs/serp_schemas/engines/*.yaml`
