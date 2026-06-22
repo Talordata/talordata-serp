@@ -16,6 +16,7 @@ env/
 # Development-only files
 tests/
 docs/superpowers/
+scripts/publish_github_release.ps1
 *.difypkg
 
 # Editor and OS files
