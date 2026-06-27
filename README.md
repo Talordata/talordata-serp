@@ -171,6 +171,6 @@ cd C:\path\to\talordata-serp
 .\scripts\publish_github_release.ps1
 ```
 
-For version `0.1.7`, this creates or updates the `v0.1.7` release in
+For version `0.1.8`, this creates or updates the `v0.1.8` release in
 `Talordata/talordata-serp` with `talordata-serp.difypkg` attached. The script
 requires `GH_TOKEN` or `GITHUB_TOKEN` in the current PowerShell session.
