@@ -43,7 +43,7 @@ def test_serp_client_posts_form_encoded_request():
     assert request.full_url == ENDPOINT
     assert request.headers["Authorization"] == "Bearer sk_test"
     assert request.headers["Origin"] == "dify"
-    assert request.headers["User-agent"] == "Talordata-Dify-Plugin/0.1.8"
+    assert request.headers["User-agent"] == "Talordata-Dify-Plugin/0.1.9"
     assert request.headers["Accept"] == "application/json"
     assert request.headers["Content-type"] == "application/x-www-form-urlencoded"
     assert request.data == b"engine=bing_images&q=coffee&count=3&json=2&isjson=1"

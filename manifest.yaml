@@ -1,4 +1,4 @@
-version: 0.1.8
+version: 0.1.9
 type: plugin
 author: talordata
 name: talordata_serp
@@ -16,7 +16,7 @@ plugins:
   tools:
     - provider/talordata_serp.yaml
 meta:
-  version: 0.1.8
+  version: 0.1.9
   arch:
     - amd64
     - arm64

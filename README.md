@@ -1,12 +1,21 @@
-# Talordata SERP Dify Plugin
+# TalorData SERP Dify Plugin
 
-Talordata SERP Dify Plugin exposes Talordata SERP API as Dify tools.
+The TalorData SERP Dify plugin adds the TalorData SERP API as a Dify tool, helping you use search result data in Dify workflows and agents.
 
-## Credentials
+## Get an API Token
 
-Configure a Talordata SERP API Key in the plugin provider settings.
+Enter your TalorData SERP API Token in the plugin authorization settings.
 
-Use an API key with this shape:
+Don’t have a Token yet? Log in to the TalorData console to get one:
+
+1.  [Log in to TalorData](https://www.talordata.com/serp-api/dify?campaignid=qYTZMwsIBdQYhx5y&utm_source=Dify&utm_term=Dify29)
+2. Go to the SERP API Token page.
+3. Create or copy an available API Token.
+4. Paste the Token into the Dify plugin configuration.
+
+New users receive free trial credits after logging in, so you can try the SERP API and Dify integration right away.
+
+API Token format example:
 
 ```text
 sk_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
@@ -171,6 +180,6 @@ cd C:\path\to\talordata-serp
 .\scripts\publish_github_release.ps1
 ```
 
-For version `0.1.8`, this creates or updates the `v0.1.8` release in
+For version `0.1.9`, this creates or updates the `v0.1.9` release in
 `Talordata/talordata-serp` with `talordata-serp.difypkg` attached. The script
 requires `GH_TOKEN` or `GITHUB_TOKEN` in the current PowerShell session.
