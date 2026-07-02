@@ -1,8 +1,6 @@
-# TalorData-Dify
-
 ## 🚀 TalorData SERP Plugin for Dify
 
-**Connect Dify to real-time search across Google, Bing, News, Maps, Images, Shopping, Scholar, Trends, and more with the TalorData SERP API. Build AI agents and workflows powered by fresh, structured, and reliable search data.**
+**Connect Dify to real-time Google, Bing, News, Maps, Images, Shopping, Scholar, Trends, and more with the TalorData SERP API. Build AI agents and workflows powered by fresh, structured, and reliable search data.**
 
 The TalorData SERP Dify plugin adds the TalorData SERP API as a Dify tool, helping you use search result data in Dify workflows and agents.
 
@@ -18,7 +16,8 @@ Enter your TalorData SERP API Token in the plugin authorization settings.
 2. Go to the SERP API Token page.
 3. Create or copy an available API Token.
 4. Paste the Token into the Dify plugin configuration.
-**🎉 New users receive free trial credits after signing up, allowing you to start building with Dify immediately.**
+
+🎉 New users receive free trial credits after signing up, allowing you to start building with Dify immediately.
 
 API Token format example:
 
@@ -36,7 +35,7 @@ Do not use a Talordata login JWT token. Login JWT is only for Talordata dashboar
 
 - **Real-time Google, Bing, News, Maps, Images, Shopping, Scholar, and Trends search**
 - **Structured JSON responses optimized for LLMs**
-- **20+ search types across four major search engines**
+- **20+ supported search engines**
 - **Native integration with Dify workflows and agents**
 - **Free trial credits for new users**
 
@@ -164,8 +163,8 @@ For Talordata SERP API account, quota, or API key issues, contact Talordata supp
 
 Ready to build AI agents with real-time search?
 
-- **Explore the **[**TalorData Dify Integration Guide**](https://www.talordata.com/serp-api/dify)
-- **Read the **[**Integration Documentation**](https://docs.talordata.com/serp-api/integration/sdk-integration/how-to-integrate-talordata-with-dify)
+- Explore the [**TalorData Dify Integration Guide**](https://www.talordata.com/serp-api/dify)
+- Read the [**Integration Documentation**](https://docs.talordata.com/serp-api/integration)
 - [**Create a free TalorData account and start with free trial credits**](https://www.talordata.com/serp-api/dify?campaignid=qYTZMwsIBdQYhx5y&utm_source=Dify&utm_term=Dify29)
 
 TalorData brings real-time search to Dify, helping developers build AI agents and workflows with fresh, structured, and reliable search data.

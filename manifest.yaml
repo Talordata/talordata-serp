@@ -6,7 +6,7 @@ label:
   en_US: Talordata SERP
   zh_Hans: Talordata SERP
 description:
-  en_US: Real-time search results from Talordata SERP API for Dify workflows and agents.
+  en_US: Real-time web search for Dify workflows and AI agents with TalorData SERP API.
   zh_Hans: 为 Dify 工作流和智能体提供 Talordata SERP 实时搜索结果。
 icon: icon.png
 resource:
