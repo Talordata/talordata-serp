@@ -1,0 +1,383 @@
+identity:
+  name: bing_shopping_search
+  author: talordata
+  label:
+    en_US: Bing Shopping Search
+    zh_Hans: Bing Shopping Search
+description:
+  human:
+    en_US: Call the bing_shopping engine through Talordata SERP API.
+    zh_Hans: 通过 Talordata SERP API 调用 bing_shopping engine。
+  llm: Call Talordata SERP engine bing_shopping and return normalized or raw SERP results.
+parameters:
+- name: q
+  type: string
+  required: true
+  label:
+    en_US: Search Query
+    zh_Hans: 搜索关键词
+  human_description:
+    en_US: 'The search keyword used by the selected engine. Example: pizza.'
+    zh_Hans: 发送给当前搜索引擎的搜索关键词，例如 pizza。
+  llm_description: Search Query parameter for the SERP request.
+  form: form
+- name: cc
+  type: select
+  required: false
+  label:
+    en_US: Country/Region
+    zh_Hans: 国家代码
+  human_description:
+    en_US: Country/Region parameter.
+    zh_Hans: 国家代码 参数。
+  llm_description: Country/Region parameter for the SERP request.
+  form: form
+  default: us
+  options:
+  - value: AR
+    label:
+      en_US: Argentina
+      zh_Hans: Argentina
+  - value: AU
+    label:
+      en_US: Australia
+      zh_Hans: Australia
+  - value: AT
+    label:
+      en_US: Austria
+      zh_Hans: Austria
+  - value: BE
+    label:
+      en_US: Belgium
+      zh_Hans: Belgium
+  - value: BR
+    label:
+      en_US: Brazil
+      zh_Hans: Brazil
+  - value: CA
+    label:
+      en_US: Canada
+      zh_Hans: Canada
+  - value: CL
+    label:
+      en_US: Chile
+      zh_Hans: Chile
+  - value: DK
+    label:
+      en_US: Denmark
+      zh_Hans: Denmark
+  - value: FI
+    label:
+      en_US: Finland
+      zh_Hans: Finland
+  - value: FR
+    label:
+      en_US: France
+      zh_Hans: France
+  - value: DE
+    label:
+      en_US: Germany
+      zh_Hans: Germany
+  - value: HK
+    label:
+      en_US: Hong Kong SAR
+      zh_Hans: Hong Kong SAR
+  - value: IN
+    label:
+      en_US: India
+      zh_Hans: India
+  - value: ID
+    label:
+      en_US: Indonesia
+      zh_Hans: Indonesia
+  - value: IT
+    label:
+      en_US: Italy
+      zh_Hans: Italy
+  - value: JP
+    label:
+      en_US: Japan
+      zh_Hans: Japan
+  - value: KR
+    label:
+      en_US: Korea
+      zh_Hans: Korea
+  - value: MY
+    label:
+      en_US: Malaysia
+      zh_Hans: Malaysia
+  - value: MX
+    label:
+      en_US: Mexico
+      zh_Hans: Mexico
+  - value: NL
+    label:
+      en_US: Netherlands
+      zh_Hans: Netherlands
+  - value: NZ
+    label:
+      en_US: New Zealand
+      zh_Hans: New Zealand
+  - value: 'NO'
+    label:
+      en_US: Norway
+      zh_Hans: Norway
+  - value: CN
+    label:
+      en_US: People's Republic of China
+      zh_Hans: People's Republic of China
+  - value: PL
+    label:
+      en_US: Poland
+      zh_Hans: Poland
+  - value: PT
+    label:
+      en_US: Portugal
+      zh_Hans: Portugal
+  - value: PH
+    label:
+      en_US: Republic of the Philippines
+      zh_Hans: Republic of the Philippines
+  - value: RU
+    label:
+      en_US: Russia
+      zh_Hans: Russia
+  - value: SA
+    label:
+      en_US: Saudi Arabia
+      zh_Hans: Saudi Arabia
+  - value: ZA
+    label:
+      en_US: South Africa
+      zh_Hans: South Africa
+  - value: ES
+    label:
+      en_US: Spain
+      zh_Hans: Spain
+  - value: SE
+    label:
+      en_US: Sweden
+      zh_Hans: Sweden
+  - value: CH
+    label:
+      en_US: Switzerland
+      zh_Hans: Switzerland
+  - value: TW
+    label:
+      en_US: Taiwan
+      zh_Hans: Taiwan
+  - value: TR
+    label:
+      en_US: Türkiye
+      zh_Hans: Türkiye
+  - value: GB
+    label:
+      en_US: United Kingdom
+      zh_Hans: United Kingdom
+  - value: US
+    label:
+      en_US: United States
+      zh_Hans: United States
+- name: mkt
+  type: select
+  required: false
+  label:
+    en_US: Market
+    zh_Hans: 市场语言
+  human_description:
+    en_US: Market parameter.
+    zh_Hans: 市场语言 参数。
+  llm_description: Market parameter for the SERP request.
+  form: form
+  default: en-us
+  options:
+  - value: es-AR
+    label:
+      en_US: es-AR - Spanish
+      zh_Hans: es-AR - Spanish
+  - value: en-AU
+    label:
+      en_US: en-AU - English
+      zh_Hans: en-AU - English
+  - value: de-AT
+    label:
+      en_US: de-AT - German
+      zh_Hans: de-AT - German
+  - value: nl-BE
+    label:
+      en_US: nl-BE - Dutch
+      zh_Hans: nl-BE - Dutch
+  - value: fr-BE
+    label:
+      en_US: fr-BE - French
+      zh_Hans: fr-BE - French
+  - value: pt-BR
+    label:
+      en_US: pt-BR - Portuguese
+      zh_Hans: pt-BR - Portuguese
+  - value: en-CA
+    label:
+      en_US: en-CA - English
+      zh_Hans: en-CA - English
+  - value: fr-CA
+    label:
+      en_US: fr-CA - French
+      zh_Hans: fr-CA - French
+  - value: es-CL
+    label:
+      en_US: es-CL - Spanish
+      zh_Hans: es-CL - Spanish
+  - value: da-DK
+    label:
+      en_US: da-DK - Danish
+      zh_Hans: da-DK - Danish
+  - value: fi-FI
+    label:
+      en_US: fi-FI - Finnish
+      zh_Hans: fi-FI - Finnish
+  - value: fr-FR
+    label:
+      en_US: fr-FR - French
+      zh_Hans: fr-FR - French
+  - value: de-DE
+    label:
+      en_US: de-DE - German
+      zh_Hans: de-DE - German
+  - value: zh-HK
+    label:
+      en_US: zh-HK - Traditional Chinese
+      zh_Hans: zh-HK - Traditional Chinese
+  - value: en-IN
+    label:
+      en_US: en-IN - English
+      zh_Hans: en-IN - English
+  - value: en-ID
+    label:
+      en_US: en-ID - English
+      zh_Hans: en-ID - English
+  - value: it-IT
+    label:
+      en_US: it-IT - Italian
+      zh_Hans: it-IT - Italian
+  - value: ja-JP
+    label:
+      en_US: ja-JP - Japanese
+      zh_Hans: ja-JP - Japanese
+  - value: ko-KR
+    label:
+      en_US: ko-KR - Korean
+      zh_Hans: ko-KR - Korean
+  - value: en-MY
+    label:
+      en_US: en-MY - English
+      zh_Hans: en-MY - English
+  - value: es-MX
+    label:
+      en_US: es-MX - Spanish
+      zh_Hans: es-MX - Spanish
+  - value: nl-NL
+    label:
+      en_US: nl-NL - Dutch
+      zh_Hans: nl-NL - Dutch
+  - value: en-NZ
+    label:
+      en_US: en-NZ - English
+      zh_Hans: en-NZ - English
+  - value: no-NO
+    label:
+      en_US: no-NO - Norwegian
+      zh_Hans: no-NO - Norwegian
+  - value: zh-CN
+    label:
+      en_US: zh-CN - Chinese
+      zh_Hans: zh-CN - Chinese
+  - value: pl-PL
+    label:
+      en_US: pl-PL - Polish
+      zh_Hans: pl-PL - Polish
+  - value: en-PH
+    label:
+      en_US: en-PH - English
+      zh_Hans: en-PH - English
+  - value: ru-RU
+    label:
+      en_US: ru-RU - Russian
+      zh_Hans: ru-RU - Russian
+  - value: en-ZA
+    label:
+      en_US: en-ZA - English
+      zh_Hans: en-ZA - English
+  - value: es-ES
+    label:
+      en_US: es-ES - Spanish
+      zh_Hans: es-ES - Spanish
+  - value: sv-SE
+    label:
+      en_US: sv-SE - Swedish
+      zh_Hans: sv-SE - Swedish
+  - value: fr-CH
+    label:
+      en_US: fr-CH - French
+      zh_Hans: fr-CH - French
+  - value: de-CH
+    label:
+      en_US: de-CH - German
+      zh_Hans: de-CH - German
+  - value: zh-TW
+    label:
+      en_US: zh-TW - Traditional Chinese
+      zh_Hans: zh-TW - Traditional Chinese
+  - value: tr-TR
+    label:
+      en_US: tr-TR - Turkish
+      zh_Hans: tr-TR - Turkish
+  - value: en-GB
+    label:
+      en_US: en-GB - English
+      zh_Hans: en-GB - English
+  - value: en-US
+    label:
+      en_US: en-US - English
+      zh_Hans: en-US - English
+  - value: es-US
+    label:
+      en_US: es-US - Spanish
+      zh_Hans: es-US - Spanish
+- name: no_cache
+  type: boolean
+  required: false
+  label:
+    en_US: No Cache
+    zh_Hans: 禁用缓存
+  human_description:
+    en_US: When enabled, the adapter returns a fresh preview result.
+    zh_Hans: 开启后将请求即时结果，不使用缓存预览。
+  llm_description: No Cache parameter for the SERP request.
+  form: form
+  default: false
+- name: efirst
+  type: number
+  required: false
+  label:
+    en_US: Start position
+    zh_Hans: 起始位置
+  human_description:
+    en_US: Start position parameter.
+    zh_Hans: 起始位置 参数。
+  llm_description: Start position parameter for the SERP request.
+  form: form
+  default: 1
+- name: filters
+  type: string
+  required: false
+  label:
+    en_US: Filters
+    zh_Hans: 过滤条件
+  human_description:
+    en_US: Filters parameter.
+    zh_Hans: 过滤条件 参数。
+  llm_description: Filters parameter for the SERP request.
+  form: form
+extra:
+  python:
+    source: tools/bing_shopping_search.py

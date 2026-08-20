@@ -1,0 +1,152 @@
+identity:
+  name: google_flights_search
+  author: talordata
+  label:
+    en_US: Google Flights Search
+    zh_Hans: Google Flights Search
+description:
+  human:
+    en_US: Call the google_flights engine through Talordata SERP API.
+    zh_Hans: 通过 Talordata SERP API 调用 google_flights engine。
+  llm: Call Talordata SERP engine google_flights and return normalized or raw SERP results.
+parameters:
+- name: q
+  type: string
+  required: false
+  label:
+    en_US: Keywords
+    zh_Hans: 关键词（可选，通常用航线代码即可）
+  human_description:
+    en_US: 'The search keyword used by the selected engine. Example: pizza.'
+    zh_Hans: 发送给当前搜索引擎的搜索关键词，例如 pizza。
+  llm_description: Keywords parameter for the SERP request.
+  form: form
+- name: departure_id
+  type: string
+  required: true
+  label:
+    en_US: Departure IATA
+    zh_Hans: 出发地 IATA
+  human_description:
+    en_US: Departure IATA parameter.
+    zh_Hans: 出发地 IATA 参数。
+  llm_description: Departure IATA parameter for the SERP request.
+  form: form
+- name: arrival_id
+  type: string
+  required: true
+  label:
+    en_US: Arrival IATA
+    zh_Hans: 到达地 IATA
+  human_description:
+    en_US: Arrival IATA parameter.
+    zh_Hans: 到达地 IATA 参数。
+  llm_description: Arrival IATA parameter for the SERP request.
+  form: form
+- name: travel_class
+  type: select
+  required: false
+  label:
+    en_US: Travel class
+    zh_Hans: 舱位
+  human_description:
+    en_US: Travel class parameter.
+    zh_Hans: 舱位 参数。
+  llm_description: Travel class parameter for the SERP request.
+  form: form
+  default: '1'
+  options:
+  - value: '1'
+    label:
+      en_US: Economy
+      zh_Hans: Economy
+  - value: '2'
+    label:
+      en_US: Premium Economy
+      zh_Hans: Premium Economy
+  - value: '3'
+    label:
+      en_US: Business
+      zh_Hans: Business
+  - value: '4'
+    label:
+      en_US: First
+      zh_Hans: First
+- name: adults
+  type: number
+  required: false
+  label:
+    en_US: Adults
+    zh_Hans: 成人数
+  human_description:
+    en_US: Adults parameter.
+    zh_Hans: 成人数 参数。
+  llm_description: Adults parameter for the SERP request.
+  form: form
+  default: 1
+  min: 1
+- name: no_cache
+  type: boolean
+  required: false
+  label:
+    en_US: No Cache
+    zh_Hans: 禁用缓存
+  human_description:
+    en_US: No Cache parameter.
+    zh_Hans: 禁用缓存 参数。
+  llm_description: No Cache parameter for the SERP request.
+  form: form
+  default: false
+- name: trip_dates
+  type: string
+  required: true
+  label:
+    en_US: Trip dates
+    zh_Hans: 行程日期
+  human_description:
+    en_US: Trip dates parameter.
+    zh_Hans: 行程日期 参数。
+  llm_description: Trip dates parameter for the SERP request.
+  form: form
+- name: children
+  type: number
+  required: false
+  label:
+    en_US: Children
+    zh_Hans: 儿童数
+  human_description:
+    en_US: Children parameter.
+    zh_Hans: 儿童数 参数。
+  llm_description: Children parameter for the SERP request.
+  form: form
+  default: 0
+  min: 0
+- name: infants_in_seat
+  type: number
+  required: false
+  label:
+    en_US: Infants in seat
+    zh_Hans: 占座婴儿
+  human_description:
+    en_US: Infants in seat parameter.
+    zh_Hans: 占座婴儿 参数。
+  llm_description: Infants in seat parameter for the SERP request.
+  form: form
+  default: 0
+  min: 0
+- name: infants_on_lap
+  type: number
+  required: false
+  label:
+    en_US: Infants on lap
+    zh_Hans: 怀抱婴儿
+  human_description:
+    en_US: Infants on lap parameter.
+    zh_Hans: 怀抱婴儿 参数。
+  llm_description: Infants on lap parameter for the SERP request.
+  form: form
+  default: 0
+  min: 0
+extra:
+  python:
+    source: tools/google_flights_search.py

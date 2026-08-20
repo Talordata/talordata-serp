@@ -1,0 +1,167 @@
+identity:
+  name: bing_image_search
+  author: talordata
+  label:
+    en_US: Bing Image Search
+    zh_Hans: Bing 图片搜索
+description:
+  human:
+    en_US: Search Bing Images through Talordata SERP API.
+    zh_Hans: 通过 Talordata SERP API 搜索 Bing 图片。
+  llm: Search Bing Images and return image result titles, links, image URLs, thumbnails, and source names.
+parameters:
+  - name: q
+    type: string
+    required: true
+    label:
+      en_US: Query
+      zh_Hans: 搜索关键词
+    human_description:
+      en_US: Search query.
+      zh_Hans: 搜索关键词。
+    llm_description: The search query.
+    form: form
+  - name: cc
+    type: select
+    required: false
+    default: us
+    label:
+      en_US: Country
+      zh_Hans: 国家
+    human_description:
+      en_US: Country code used by Bing Images.
+      zh_Hans: Bing 图片搜索使用的国家代码。
+    llm_description: Country code used by Bing Images.
+    options:
+      - value: us
+        label:
+          en_US: United States
+          zh_Hans: 美国
+      - value: cn
+        label:
+          en_US: China
+          zh_Hans: 中国
+      - value: gb
+        label:
+          en_US: United Kingdom
+          zh_Hans: 英国
+    form: form
+  - name: setlang
+    type: select
+    required: false
+    default: en
+    label:
+      en_US: Language
+      zh_Hans: 语言
+    human_description:
+      en_US: Response language code.
+      zh_Hans: 响应语言代码。
+    llm_description: Response language code.
+    options:
+      - value: en
+        label:
+          en_US: English
+          zh_Hans: 英语
+      - value: zh-cn
+        label:
+          en_US: Simplified Chinese
+          zh_Hans: 简体中文
+    form: form
+  - name: mkt
+    type: string
+    required: false
+    default: en-us
+    label:
+      en_US: Market
+      zh_Hans: 市场
+    human_description:
+      en_US: Bing market code, for example en-us or zh-cn.
+      zh_Hans: Bing 市场代码，例如 en-us 或 zh-cn。
+    llm_description: Bing market code, for example en-us or zh-cn.
+    form: form
+  - name: count
+    type: number
+    required: false
+    default: 10
+    min: 1
+    max: 35
+    label:
+      en_US: Result Count
+      zh_Hans: 返回数量
+    human_description:
+      en_US: Number of image results to return.
+      zh_Hans: 返回的图片结果数量。
+    llm_description: Number of image results to return.
+    form: form
+  - name: first
+    type: number
+    required: false
+    default: 1
+    min: 1
+    label:
+      en_US: First Result Offset
+      zh_Hans: 起始结果位置
+    human_description:
+      en_US: One-based result offset for pagination.
+      zh_Hans: 用于分页的起始结果位置，从 1 开始。
+    llm_description: One-based result offset for pagination.
+    form: form
+  - name: adlt
+    type: select
+    required: false
+    label:
+      en_US: Safe Search
+      zh_Hans: 安全搜索
+    human_description:
+      en_US: Bing safe search level.
+      zh_Hans: Bing 安全搜索级别。
+    llm_description: Bing safe search level.
+    options:
+      - value: strict
+        label:
+          en_US: Strict
+          zh_Hans: 严格
+      - value: "off"
+        label:
+          en_US: "Off"
+          zh_Hans: 关闭
+    form: form
+  - name: imagesize
+    type: select
+    required: false
+    label:
+      en_US: Image Size
+      zh_Hans: 图片尺寸
+    human_description:
+      en_US: Filter image results by size.
+      zh_Hans: 按图片尺寸筛选结果。
+    llm_description: Filter image results by size.
+    options:
+      - value: "+filterui:imagesize-small"
+        label:
+          en_US: Small
+          zh_Hans: 小
+      - value: "+filterui:imagesize-medium"
+        label:
+          en_US: Medium
+          zh_Hans: 中
+      - value: "+filterui:imagesize-large"
+        label:
+          en_US: Large
+          zh_Hans: 大
+    form: form
+  - name: no_cache
+    type: boolean
+    required: false
+    default: false
+    label:
+      en_US: No Cache
+      zh_Hans: 不使用缓存
+    human_description:
+      en_US: Bypass cached SERP results when supported.
+      zh_Hans: 在支持时绕过缓存的 SERP 结果。
+    llm_description: Bypass cached SERP results when supported.
+    form: form
+extra:
+  python:
+    source: tools/bing_image_search.py

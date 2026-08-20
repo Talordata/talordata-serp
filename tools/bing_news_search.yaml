@@ -1,0 +1,745 @@
+identity:
+  name: bing_news_search
+  author: talordata
+  label:
+    en_US: Bing News Search
+    zh_Hans: Bing News Search
+description:
+  human:
+    en_US: Call the bing_news engine through Talordata SERP API.
+    zh_Hans: 通过 Talordata SERP API 调用 bing_news engine。
+  llm: Call Talordata SERP engine bing_news and return normalized or raw SERP results.
+parameters:
+- name: q
+  type: string
+  required: true
+  label:
+    en_US: Search Query
+    zh_Hans: 搜索关键词
+  human_description:
+    en_US: 'The search keyword used by the selected engine. Example: pizza.'
+    zh_Hans: 发送给当前搜索引擎的搜索关键词，例如 pizza。
+  llm_description: Search Query parameter for the SERP request.
+  form: form
+- name: cc
+  type: select
+  required: false
+  label:
+    en_US: Country/Region
+    zh_Hans: 国家代码
+  human_description:
+    en_US: Country/Region parameter.
+    zh_Hans: 国家代码 参数。
+  llm_description: Country/Region parameter for the SERP request.
+  form: form
+  default: us
+  options:
+  - value: AR
+    label:
+      en_US: Argentina
+      zh_Hans: Argentina
+  - value: AU
+    label:
+      en_US: Australia
+      zh_Hans: Australia
+  - value: AT
+    label:
+      en_US: Austria
+      zh_Hans: Austria
+  - value: BE
+    label:
+      en_US: Belgium
+      zh_Hans: Belgium
+  - value: BR
+    label:
+      en_US: Brazil
+      zh_Hans: Brazil
+  - value: CA
+    label:
+      en_US: Canada
+      zh_Hans: Canada
+  - value: CL
+    label:
+      en_US: Chile
+      zh_Hans: Chile
+  - value: DK
+    label:
+      en_US: Denmark
+      zh_Hans: Denmark
+  - value: FI
+    label:
+      en_US: Finland
+      zh_Hans: Finland
+  - value: FR
+    label:
+      en_US: France
+      zh_Hans: France
+  - value: DE
+    label:
+      en_US: Germany
+      zh_Hans: Germany
+  - value: HK
+    label:
+      en_US: Hong Kong SAR
+      zh_Hans: Hong Kong SAR
+  - value: IN
+    label:
+      en_US: India
+      zh_Hans: India
+  - value: ID
+    label:
+      en_US: Indonesia
+      zh_Hans: Indonesia
+  - value: IT
+    label:
+      en_US: Italy
+      zh_Hans: Italy
+  - value: JP
+    label:
+      en_US: Japan
+      zh_Hans: Japan
+  - value: KR
+    label:
+      en_US: Korea
+      zh_Hans: Korea
+  - value: MY
+    label:
+      en_US: Malaysia
+      zh_Hans: Malaysia
+  - value: MX
+    label:
+      en_US: Mexico
+      zh_Hans: Mexico
+  - value: NL
+    label:
+      en_US: Netherlands
+      zh_Hans: Netherlands
+  - value: NZ
+    label:
+      en_US: New Zealand
+      zh_Hans: New Zealand
+  - value: 'NO'
+    label:
+      en_US: Norway
+      zh_Hans: Norway
+  - value: CN
+    label:
+      en_US: People's Republic of China
+      zh_Hans: People's Republic of China
+  - value: PL
+    label:
+      en_US: Poland
+      zh_Hans: Poland
+  - value: PT
+    label:
+      en_US: Portugal
+      zh_Hans: Portugal
+  - value: PH
+    label:
+      en_US: Republic of the Philippines
+      zh_Hans: Republic of the Philippines
+  - value: RU
+    label:
+      en_US: Russia
+      zh_Hans: Russia
+  - value: SA
+    label:
+      en_US: Saudi Arabia
+      zh_Hans: Saudi Arabia
+  - value: ZA
+    label:
+      en_US: South Africa
+      zh_Hans: South Africa
+  - value: ES
+    label:
+      en_US: Spain
+      zh_Hans: Spain
+  - value: SE
+    label:
+      en_US: Sweden
+      zh_Hans: Sweden
+  - value: CH
+    label:
+      en_US: Switzerland
+      zh_Hans: Switzerland
+  - value: TW
+    label:
+      en_US: Taiwan
+      zh_Hans: Taiwan
+  - value: TR
+    label:
+      en_US: Türkiye
+      zh_Hans: Türkiye
+  - value: GB
+    label:
+      en_US: United Kingdom
+      zh_Hans: United Kingdom
+  - value: US
+    label:
+      en_US: United States
+      zh_Hans: United States
+- name: setlang
+  type: select
+  required: false
+  label:
+    en_US: Language
+    zh_Hans: 界面语言
+  human_description:
+    en_US: Language parameter.
+    zh_Hans: 界面语言 参数。
+  llm_description: Language parameter for the SERP request.
+  form: form
+  default: en
+  options:
+  - value: ar-SA
+    label:
+      en_US: Arabic - Saudi Arabia
+      zh_Hans: Arabic - Saudi Arabia
+  - value: eu
+    label:
+      en_US: Basque
+      zh_Hans: Basque
+  - value: bg
+    label:
+      en_US: Bulgarian
+      zh_Hans: Bulgarian
+  - value: bg-BG
+    label:
+      en_US: Bulgarian - Bulgaria
+      zh_Hans: Bulgarian - Bulgaria
+  - value: ca
+    label:
+      en_US: Catalan Spanish
+      zh_Hans: Catalan Spanish
+  - value: ku-Arab
+    label:
+      en_US: Central Kurdish
+      zh_Hans: Central Kurdish
+  - value: zh-CN
+    label:
+      en_US: Chinese - China
+      zh_Hans: Chinese - China
+  - value: zh-HK
+    label:
+      en_US: Chinese - Hong Kong Special Administrative Unit
+      zh_Hans: Chinese - Hong Kong Special Administrative Unit
+  - value: zh-Hans
+    label:
+      en_US: Chinese - Simplified
+      zh_Hans: Chinese - Simplified
+  - value: zh-TW
+    label:
+      en_US: Chinese - Taiwan
+      zh_Hans: Chinese - Taiwan
+  - value: zh-Hant
+    label:
+      en_US: Chinese - Traditional
+      zh_Hans: Chinese - Traditional
+  - value: cs
+    label:
+      en_US: Czech
+      zh_Hans: Czech
+  - value: cs-CZ
+    label:
+      en_US: Czech - Czech Republic
+      zh_Hans: Czech - Czech Republic
+  - value: da
+    label:
+      en_US: Danish
+      zh_Hans: Danish
+  - value: da-DK
+    label:
+      en_US: Danish - Denmark
+      zh_Hans: Danish - Denmark
+  - value: nl-BE
+    label:
+      en_US: Dutch - Belgium
+      zh_Hans: Dutch - Belgium
+  - value: nl
+    label:
+      en_US: Dutch - Netherlands
+      zh_Hans: Dutch - Netherlands
+  - value: nl-NL
+    label:
+      en_US: Dutch - Netherlands
+      zh_Hans: Dutch - Netherlands
+  - value: en-AU
+    label:
+      en_US: English - Australia
+      zh_Hans: English - Australia
+  - value: en-CA
+    label:
+      en_US: English - Canada
+      zh_Hans: English - Canada
+  - value: en-IN
+    label:
+      en_US: English - India
+      zh_Hans: English - India
+  - value: en-GB
+    label:
+      en_US: English - United Kingdom
+      zh_Hans: English - United Kingdom
+  - value: en-US
+    label:
+      en_US: English - United States
+      zh_Hans: English - United States
+  - value: fi
+    label:
+      en_US: Finnish
+      zh_Hans: Finnish
+  - value: fi-FI
+    label:
+      en_US: Finnish - Finland
+      zh_Hans: Finnish - Finland
+  - value: fr-BE
+    label:
+      en_US: French - Belgium
+      zh_Hans: French - Belgium
+  - value: fr-CA
+    label:
+      en_US: French - Canada
+      zh_Hans: French - Canada
+  - value: fr
+    label:
+      en_US: French - France
+      zh_Hans: French - France
+  - value: fr-FR
+    label:
+      en_US: French - France
+      zh_Hans: French - France
+  - value: fr-CH
+    label:
+      en_US: French - Switzerland
+      zh_Hans: French - Switzerland
+  - value: gl
+    label:
+      en_US: Galician
+      zh_Hans: Galician
+  - value: de
+    label:
+      en_US: German - Germany
+      zh_Hans: German - Germany
+  - value: de-DE
+    label:
+      en_US: German - Germany
+      zh_Hans: German - Germany
+  - value: el
+    label:
+      en_US: Greek
+      zh_Hans: Greek
+  - value: he
+    label:
+      en_US: Hebrew
+      zh_Hans: Hebrew
+  - value: he-IL
+    label:
+      en_US: Hebrew - Israel
+      zh_Hans: Hebrew - Israel
+  - value: hi
+    label:
+      en_US: Hindi
+      zh_Hans: Hindi
+  - value: hi-IN
+    label:
+      en_US: Hindi - India
+      zh_Hans: Hindi - India
+  - value: hu
+    label:
+      en_US: Hungarian
+      zh_Hans: Hungarian
+  - value: hu-HU
+    label:
+      en_US: Hungarian - Hungary
+      zh_Hans: Hungarian - Hungary
+  - value: is
+    label:
+      en_US: Icelandic
+      zh_Hans: Icelandic
+  - value: is-IS
+    label:
+      en_US: Icelandic - Iceland
+      zh_Hans: Icelandic - Iceland
+  - value: it
+    label:
+      en_US: Italian - Italy
+      zh_Hans: Italian - Italy
+  - value: it-IT
+    label:
+      en_US: Italian - Italy
+      zh_Hans: Italian - Italy
+  - value: ja
+    label:
+      en_US: Japanese
+      zh_Hans: Japanese
+  - value: ja-JP
+    label:
+      en_US: Japanese - Japan
+      zh_Hans: Japanese - Japan
+  - value: ko
+    label:
+      en_US: Korean
+      zh_Hans: Korean
+  - value: Ko-KR
+    label:
+      en_US: Korean - Korea
+      zh_Hans: Korean - Korea
+  - value: ky-Cyrl
+    label:
+      en_US: Kyrgyz
+      zh_Hans: Kyrgyz
+  - value: lv
+    label:
+      en_US: Latvian
+      zh_Hans: Latvian
+  - value: lv-LV
+    label:
+      en_US: Latvian - Latvia
+      zh_Hans: Latvian - Latvia
+  - value: lt
+    label:
+      en_US: Lithuanian
+      zh_Hans: Lithuanian
+  - value: lt-LT
+    label:
+      en_US: Lithuanian - Lithuania
+      zh_Hans: Lithuanian - Lithuania
+  - value: nb
+    label:
+      en_US: Norwegian - Bokmål
+      zh_Hans: Norwegian - Bokmål
+  - value: nb-NO
+    label:
+      en_US: Norwegian - Bokmål - Norway
+      zh_Hans: Norwegian - Bokmål - Norway
+  - value: nn
+    label:
+      en_US: Norwegian - Nynorsk
+      zh_Hans: Norwegian - Nynorsk
+  - value: pl
+    label:
+      en_US: Polish
+      zh_Hans: Polish
+  - value: pl-PL
+    label:
+      en_US: Polish - Poland
+      zh_Hans: Polish - Poland
+  - value: pt-BR
+    label:
+      en_US: Portuguese - Brazil
+      zh_Hans: Portuguese - Brazil
+  - value: pt-PT
+    label:
+      en_US: Portuguese - Portugal
+      zh_Hans: Portuguese - Portugal
+  - value: ru
+    label:
+      en_US: Russian
+      zh_Hans: Russian
+  - value: ru-RU
+    label:
+      en_US: Russian - Russia
+      zh_Hans: Russian - Russia
+  - value: es-MX
+    label:
+      en_US: Spanish - Mexico
+      zh_Hans: Spanish - Mexico
+  - value: es
+    label:
+      en_US: Spanish - Spain
+      zh_Hans: Spanish - Spain
+  - value: es-ES
+    label:
+      en_US: Spanish - Spain
+      zh_Hans: Spanish - Spain
+  - value: es-US
+    label:
+      en_US: Spanish - United States
+      zh_Hans: Spanish - United States
+  - value: sv
+    label:
+      en_US: Swedish - Sweden
+      zh_Hans: Swedish - Sweden
+  - value: sv-SE
+    label:
+      en_US: Swedish - Sweden
+      zh_Hans: Swedish - Sweden
+  - value: tt-Cyrl
+    label:
+      en_US: Tatar - Cyrillic
+      zh_Hans: Tatar - Cyrillic
+  - value: th
+    label:
+      en_US: Thai
+      zh_Hans: Thai
+  - value: th-TH
+    label:
+      en_US: Thai - Thailand
+      zh_Hans: Thai - Thailand
+  - value: tr
+    label:
+      en_US: Turkish
+      zh_Hans: Turkish
+  - value: tr-TR
+    label:
+      en_US: Turkish - Türkiye
+      zh_Hans: Turkish - Türkiye
+  - value: uk
+    label:
+      en_US: Ukrainian
+      zh_Hans: Ukrainian
+  - value: uk-UA
+    label:
+      en_US: Ukrainian - Ukraine
+      zh_Hans: Ukrainian - Ukraine
+  - value: ug-Arab
+    label:
+      en_US: Uyghur
+      zh_Hans: Uyghur
+  - value: ca-ES-valencia
+    label:
+      en_US: Valencian
+      zh_Hans: Valencian
+  - value: vi
+    label:
+      en_US: Vietnamese
+      zh_Hans: Vietnamese
+  - value: vi-VN
+    label:
+      en_US: Vietnamese - Vietnam
+      zh_Hans: Vietnamese - Vietnam
+- name: mkt
+  type: select
+  required: false
+  label:
+    en_US: Market
+    zh_Hans: 市场语言
+  human_description:
+    en_US: Market parameter.
+    zh_Hans: 市场语言 参数。
+  llm_description: Market parameter for the SERP request.
+  form: form
+  default: en-us
+  options:
+  - value: es-AR
+    label:
+      en_US: es-AR - Spanish
+      zh_Hans: es-AR - Spanish
+  - value: en-AU
+    label:
+      en_US: en-AU - English
+      zh_Hans: en-AU - English
+  - value: de-AT
+    label:
+      en_US: de-AT - German
+      zh_Hans: de-AT - German
+  - value: nl-BE
+    label:
+      en_US: nl-BE - Dutch
+      zh_Hans: nl-BE - Dutch
+  - value: fr-BE
+    label:
+      en_US: fr-BE - French
+      zh_Hans: fr-BE - French
+  - value: pt-BR
+    label:
+      en_US: pt-BR - Portuguese
+      zh_Hans: pt-BR - Portuguese
+  - value: en-CA
+    label:
+      en_US: en-CA - English
+      zh_Hans: en-CA - English
+  - value: fr-CA
+    label:
+      en_US: fr-CA - French
+      zh_Hans: fr-CA - French
+  - value: es-CL
+    label:
+      en_US: es-CL - Spanish
+      zh_Hans: es-CL - Spanish
+  - value: da-DK
+    label:
+      en_US: da-DK - Danish
+      zh_Hans: da-DK - Danish
+  - value: fi-FI
+    label:
+      en_US: fi-FI - Finnish
+      zh_Hans: fi-FI - Finnish
+  - value: fr-FR
+    label:
+      en_US: fr-FR - French
+      zh_Hans: fr-FR - French
+  - value: de-DE
+    label:
+      en_US: de-DE - German
+      zh_Hans: de-DE - German
+  - value: zh-HK
+    label:
+      en_US: zh-HK - Traditional Chinese
+      zh_Hans: zh-HK - Traditional Chinese
+  - value: en-IN
+    label:
+      en_US: en-IN - English
+      zh_Hans: en-IN - English
+  - value: en-ID
+    label:
+      en_US: en-ID - English
+      zh_Hans: en-ID - English
+  - value: it-IT
+    label:
+      en_US: it-IT - Italian
+      zh_Hans: it-IT - Italian
+  - value: ja-JP
+    label:
+      en_US: ja-JP - Japanese
+      zh_Hans: ja-JP - Japanese
+  - value: ko-KR
+    label:
+      en_US: ko-KR - Korean
+      zh_Hans: ko-KR - Korean
+  - value: en-MY
+    label:
+      en_US: en-MY - English
+      zh_Hans: en-MY - English
+  - value: es-MX
+    label:
+      en_US: es-MX - Spanish
+      zh_Hans: es-MX - Spanish
+  - value: nl-NL
+    label:
+      en_US: nl-NL - Dutch
+      zh_Hans: nl-NL - Dutch
+  - value: en-NZ
+    label:
+      en_US: en-NZ - English
+      zh_Hans: en-NZ - English
+  - value: no-NO
+    label:
+      en_US: no-NO - Norwegian
+      zh_Hans: no-NO - Norwegian
+  - value: zh-CN
+    label:
+      en_US: zh-CN - Chinese
+      zh_Hans: zh-CN - Chinese
+  - value: pl-PL
+    label:
+      en_US: pl-PL - Polish
+      zh_Hans: pl-PL - Polish
+  - value: en-PH
+    label:
+      en_US: en-PH - English
+      zh_Hans: en-PH - English
+  - value: ru-RU
+    label:
+      en_US: ru-RU - Russian
+      zh_Hans: ru-RU - Russian
+  - value: en-ZA
+    label:
+      en_US: en-ZA - English
+      zh_Hans: en-ZA - English
+  - value: es-ES
+    label:
+      en_US: es-ES - Spanish
+      zh_Hans: es-ES - Spanish
+  - value: sv-SE
+    label:
+      en_US: sv-SE - Swedish
+      zh_Hans: sv-SE - Swedish
+  - value: fr-CH
+    label:
+      en_US: fr-CH - French
+      zh_Hans: fr-CH - French
+  - value: de-CH
+    label:
+      en_US: de-CH - German
+      zh_Hans: de-CH - German
+  - value: zh-TW
+    label:
+      en_US: zh-TW - Traditional Chinese
+      zh_Hans: zh-TW - Traditional Chinese
+  - value: tr-TR
+    label:
+      en_US: tr-TR - Turkish
+      zh_Hans: tr-TR - Turkish
+  - value: en-GB
+    label:
+      en_US: en-GB - English
+      zh_Hans: en-GB - English
+  - value: en-US
+    label:
+      en_US: en-US - English
+      zh_Hans: en-US - English
+  - value: es-US
+    label:
+      en_US: es-US - Spanish
+      zh_Hans: es-US - Spanish
+- name: no_cache
+  type: boolean
+  required: false
+  label:
+    en_US: No Cache
+    zh_Hans: 禁用缓存
+  human_description:
+    en_US: When enabled, the adapter returns a fresh preview result.
+    zh_Hans: 开启后将请求即时结果，不使用缓存预览。
+  llm_description: No Cache parameter for the SERP request.
+  form: form
+  default: false
+- name: first
+  type: number
+  required: false
+  label:
+    en_US: Start Position
+    zh_Hans: 起始偏移
+  human_description:
+    en_US: Start Position parameter.
+    zh_Hans: 起始偏移 参数。
+  llm_description: Start Position parameter for the SERP request.
+  form: form
+  default: 1
+- name: count
+  type: number
+  required: false
+  label:
+    en_US: Results Per Page
+    zh_Hans: 返回数量
+  human_description:
+    en_US: Results Per Page parameter.
+    zh_Hans: 返回数量 参数。
+  llm_description: Results Per Page parameter for the SERP request.
+  form: form
+  default: 10
+- name: qft
+  type: select
+  required: false
+  label:
+    en_US: Filter
+    zh_Hans: 过滤条件
+  human_description:
+    en_US: Filter parameter.
+    zh_Hans: 过滤条件 参数。
+  llm_description: Filter parameter for the SERP request.
+  form: form
+  options:
+  - value: ''
+    label:
+      en_US: Any time
+      zh_Hans: Any time
+  - value: interval="7"
+    label:
+      en_US: Past day
+      zh_Hans: Past day
+  - value: interval="8"
+    label:
+      en_US: Past week
+      zh_Hans: Past week
+  - value: interval="9"
+    label:
+      en_US: Past month
+      zh_Hans: Past month
+  - value: sortbydate="1"
+    label:
+      en_US: Sort by date
+      zh_Hans: Sort by date
+extra:
+  python:
+    source: tools/bing_news_search.py

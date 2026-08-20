@@ -1,0 +1,1095 @@
+identity:
+  name: duckduckgo_search
+  author: talordata
+  label:
+    en_US: Duckduckgo Search
+    zh_Hans: Duckduckgo Search
+description:
+  human:
+    en_US: Call the duckduckgo engine through Talordata SERP API.
+    zh_Hans: 通过 Talordata SERP API 调用 duckduckgo engine。
+  llm: Call Talordata SERP engine duckduckgo and return normalized or raw SERP results.
+parameters:
+- name: q
+  type: string
+  required: true
+  label:
+    en_US: Search Query
+    zh_Hans: 搜索关键词
+  human_description:
+    en_US: 'The search keyword used by the selected engine. Example: pizza.'
+    zh_Hans: 发送给当前搜索引擎的搜索关键词，例如 pizza。
+  llm_description: Search Query parameter for the SERP request.
+  form: form
+- name: kl
+  type: select
+  required: false
+  label:
+    en_US: Region
+    zh_Hans: 地区
+  human_description:
+    en_US: Region parameter.
+    zh_Hans: 地区 参数。
+  llm_description: Region parameter for the SERP request.
+  form: form
+  default: us-en
+  options:
+  - value: af-en
+    label:
+      en_US: Afghanistan (EN)
+      zh_Hans: Afghanistan (EN)
+  - value: al-en
+    label:
+      en_US: Albania (EN)
+      zh_Hans: Albania (EN)
+  - value: dz-en
+    label:
+      en_US: Algeria (EN)
+      zh_Hans: Algeria (EN)
+  - value: as-en
+    label:
+      en_US: American Samoa (EN)
+      zh_Hans: American Samoa (EN)
+  - value: ad-en
+    label:
+      en_US: Andorra (EN)
+      zh_Hans: Andorra (EN)
+  - value: ao-en
+    label:
+      en_US: Angola (EN)
+      zh_Hans: Angola (EN)
+  - value: ai-en
+    label:
+      en_US: Anguilla (EN)
+      zh_Hans: Anguilla (EN)
+  - value: aq-en
+    label:
+      en_US: Antarctica (EN)
+      zh_Hans: Antarctica (EN)
+  - value: ag-en
+    label:
+      en_US: Antigua and Barbuda (EN)
+      zh_Hans: Antigua and Barbuda (EN)
+  - value: ar-en
+    label:
+      en_US: Argentina (EN)
+      zh_Hans: Argentina (EN)
+  - value: am-en
+    label:
+      en_US: Armenia (EN)
+      zh_Hans: Armenia (EN)
+  - value: aw-en
+    label:
+      en_US: Aruba (EN)
+      zh_Hans: Aruba (EN)
+  - value: au-en
+    label:
+      en_US: Australia (EN)
+      zh_Hans: Australia (EN)
+  - value: at-en
+    label:
+      en_US: Austria (EN)
+      zh_Hans: Austria (EN)
+  - value: az-en
+    label:
+      en_US: Azerbaijan (EN)
+      zh_Hans: Azerbaijan (EN)
+  - value: bs-en
+    label:
+      en_US: Bahamas (EN)
+      zh_Hans: Bahamas (EN)
+  - value: bh-en
+    label:
+      en_US: Bahrain (EN)
+      zh_Hans: Bahrain (EN)
+  - value: bd-en
+    label:
+      en_US: Bangladesh (EN)
+      zh_Hans: Bangladesh (EN)
+  - value: bb-en
+    label:
+      en_US: Barbados (EN)
+      zh_Hans: Barbados (EN)
+  - value: by-en
+    label:
+      en_US: Belarus (EN)
+      zh_Hans: Belarus (EN)
+  - value: be-en
+    label:
+      en_US: Belgium (EN)
+      zh_Hans: Belgium (EN)
+  - value: bz-en
+    label:
+      en_US: Belize (EN)
+      zh_Hans: Belize (EN)
+  - value: bj-en
+    label:
+      en_US: Benin (EN)
+      zh_Hans: Benin (EN)
+  - value: bm-en
+    label:
+      en_US: Bermuda (EN)
+      zh_Hans: Bermuda (EN)
+  - value: bt-en
+    label:
+      en_US: Bhutan (EN)
+      zh_Hans: Bhutan (EN)
+  - value: bo-en
+    label:
+      en_US: Bolivia (EN)
+      zh_Hans: Bolivia (EN)
+  - value: ba-en
+    label:
+      en_US: Bosnia and Herzegovina (EN)
+      zh_Hans: Bosnia and Herzegovina (EN)
+  - value: bw-en
+    label:
+      en_US: Botswana (EN)
+      zh_Hans: Botswana (EN)
+  - value: bv-en
+    label:
+      en_US: Bouvet Island (EN)
+      zh_Hans: Bouvet Island (EN)
+  - value: br-en
+    label:
+      en_US: Brazil (EN)
+      zh_Hans: Brazil (EN)
+  - value: io-en
+    label:
+      en_US: British Indian Ocean Territory (EN)
+      zh_Hans: British Indian Ocean Territory (EN)
+  - value: bn-en
+    label:
+      en_US: Brunei Darussalam (EN)
+      zh_Hans: Brunei Darussalam (EN)
+  - value: bg-en
+    label:
+      en_US: Bulgaria (EN)
+      zh_Hans: Bulgaria (EN)
+  - value: bf-en
+    label:
+      en_US: Burkina Faso (EN)
+      zh_Hans: Burkina Faso (EN)
+  - value: bi-en
+    label:
+      en_US: Burundi (EN)
+      zh_Hans: Burundi (EN)
+  - value: kh-en
+    label:
+      en_US: Cambodia (EN)
+      zh_Hans: Cambodia (EN)
+  - value: cm-en
+    label:
+      en_US: Cameroon (EN)
+      zh_Hans: Cameroon (EN)
+  - value: ca-en
+    label:
+      en_US: Canada (EN)
+      zh_Hans: Canada (EN)
+  - value: cv-en
+    label:
+      en_US: Cape Verde (EN)
+      zh_Hans: Cape Verde (EN)
+  - value: ky-en
+    label:
+      en_US: Cayman Islands (EN)
+      zh_Hans: Cayman Islands (EN)
+  - value: cf-en
+    label:
+      en_US: Central African Republic (EN)
+      zh_Hans: Central African Republic (EN)
+  - value: td-en
+    label:
+      en_US: Chad (EN)
+      zh_Hans: Chad (EN)
+  - value: cl-en
+    label:
+      en_US: Chile (EN)
+      zh_Hans: Chile (EN)
+  - value: cn-en
+    label:
+      en_US: China (EN)
+      zh_Hans: China (EN)
+  - value: cx-en
+    label:
+      en_US: Christmas Island (EN)
+      zh_Hans: Christmas Island (EN)
+  - value: cc-en
+    label:
+      en_US: Cocos (Keeling) Islands (EN)
+      zh_Hans: Cocos (Keeling) Islands (EN)
+  - value: co-en
+    label:
+      en_US: Colombia (EN)
+      zh_Hans: Colombia (EN)
+  - value: km-en
+    label:
+      en_US: Comoros (EN)
+      zh_Hans: Comoros (EN)
+  - value: cg-en
+    label:
+      en_US: Congo (EN)
+      zh_Hans: Congo (EN)
+  - value: cd-en
+    label:
+      en_US: Congo, the Democratic Republic of the (EN)
+      zh_Hans: Congo, the Democratic Republic of the (EN)
+  - value: ck-en
+    label:
+      en_US: Cook Islands (EN)
+      zh_Hans: Cook Islands (EN)
+  - value: cr-en
+    label:
+      en_US: Costa Rica (EN)
+      zh_Hans: Costa Rica (EN)
+  - value: ci-en
+    label:
+      en_US: Cote D'ivoire (EN)
+      zh_Hans: Cote D'ivoire (EN)
+  - value: hr-en
+    label:
+      en_US: Croatia (EN)
+      zh_Hans: Croatia (EN)
+  - value: cu-en
+    label:
+      en_US: Cuba (EN)
+      zh_Hans: Cuba (EN)
+  - value: cy-en
+    label:
+      en_US: Cyprus (EN)
+      zh_Hans: Cyprus (EN)
+  - value: cz-en
+    label:
+      en_US: Czech Republic (EN)
+      zh_Hans: Czech Republic (EN)
+  - value: dk-en
+    label:
+      en_US: Denmark (EN)
+      zh_Hans: Denmark (EN)
+  - value: dj-en
+    label:
+      en_US: Djibouti (EN)
+      zh_Hans: Djibouti (EN)
+  - value: dm-en
+    label:
+      en_US: Dominica (EN)
+      zh_Hans: Dominica (EN)
+  - value: do-en
+    label:
+      en_US: Dominican Republic (EN)
+      zh_Hans: Dominican Republic (EN)
+  - value: ec-en
+    label:
+      en_US: Ecuador (EN)
+      zh_Hans: Ecuador (EN)
+  - value: eg-en
+    label:
+      en_US: Egypt (EN)
+      zh_Hans: Egypt (EN)
+  - value: sv-en
+    label:
+      en_US: El Salvador (EN)
+      zh_Hans: El Salvador (EN)
+  - value: gq-en
+    label:
+      en_US: Equatorial Guinea (EN)
+      zh_Hans: Equatorial Guinea (EN)
+  - value: er-en
+    label:
+      en_US: Eritrea (EN)
+      zh_Hans: Eritrea (EN)
+  - value: ee-en
+    label:
+      en_US: Estonia (EN)
+      zh_Hans: Estonia (EN)
+  - value: et-en
+    label:
+      en_US: Ethiopia (EN)
+      zh_Hans: Ethiopia (EN)
+  - value: fk-en
+    label:
+      en_US: Falkland Islands (Malvinas) (EN)
+      zh_Hans: Falkland Islands (Malvinas) (EN)
+  - value: fo-en
+    label:
+      en_US: Faroe Islands (EN)
+      zh_Hans: Faroe Islands (EN)
+  - value: fj-en
+    label:
+      en_US: Fiji (EN)
+      zh_Hans: Fiji (EN)
+  - value: fi-en
+    label:
+      en_US: Finland (EN)
+      zh_Hans: Finland (EN)
+  - value: fr-en
+    label:
+      en_US: France (EN)
+      zh_Hans: France (EN)
+  - value: gf-en
+    label:
+      en_US: French Guiana (EN)
+      zh_Hans: French Guiana (EN)
+  - value: pf-en
+    label:
+      en_US: French Polynesia (EN)
+      zh_Hans: French Polynesia (EN)
+  - value: tf-en
+    label:
+      en_US: French Southern Territories (EN)
+      zh_Hans: French Southern Territories (EN)
+  - value: ga-en
+    label:
+      en_US: Gabon (EN)
+      zh_Hans: Gabon (EN)
+  - value: gm-en
+    label:
+      en_US: Gambia (EN)
+      zh_Hans: Gambia (EN)
+  - value: ge-en
+    label:
+      en_US: Georgia (EN)
+      zh_Hans: Georgia (EN)
+  - value: de-en
+    label:
+      en_US: Germany (EN)
+      zh_Hans: Germany (EN)
+  - value: gh-en
+    label:
+      en_US: Ghana (EN)
+      zh_Hans: Ghana (EN)
+  - value: gi-en
+    label:
+      en_US: Gibraltar (EN)
+      zh_Hans: Gibraltar (EN)
+  - value: gr-en
+    label:
+      en_US: Greece (EN)
+      zh_Hans: Greece (EN)
+  - value: gl-en
+    label:
+      en_US: Greenland (EN)
+      zh_Hans: Greenland (EN)
+  - value: gd-en
+    label:
+      en_US: Grenada (EN)
+      zh_Hans: Grenada (EN)
+  - value: gp-en
+    label:
+      en_US: Guadeloupe (EN)
+      zh_Hans: Guadeloupe (EN)
+  - value: gu-en
+    label:
+      en_US: Guam (EN)
+      zh_Hans: Guam (EN)
+  - value: gt-en
+    label:
+      en_US: Guatemala (EN)
+      zh_Hans: Guatemala (EN)
+  - value: gg-en
+    label:
+      en_US: Guernsey (EN)
+      zh_Hans: Guernsey (EN)
+  - value: gn-en
+    label:
+      en_US: Guinea (EN)
+      zh_Hans: Guinea (EN)
+  - value: gw-en
+    label:
+      en_US: Guinea-Bissau (EN)
+      zh_Hans: Guinea-Bissau (EN)
+  - value: gy-en
+    label:
+      en_US: Guyana (EN)
+      zh_Hans: Guyana (EN)
+  - value: ht-en
+    label:
+      en_US: Haiti (EN)
+      zh_Hans: Haiti (EN)
+  - value: hm-en
+    label:
+      en_US: Heard Island and Mcdonald Islands (EN)
+      zh_Hans: Heard Island and Mcdonald Islands (EN)
+  - value: va-en
+    label:
+      en_US: Holy See (Vatican City State) (EN)
+      zh_Hans: Holy See (Vatican City State) (EN)
+  - value: hn-en
+    label:
+      en_US: Honduras (EN)
+      zh_Hans: Honduras (EN)
+  - value: hk-en
+    label:
+      en_US: Hong Kong (EN)
+      zh_Hans: Hong Kong (EN)
+  - value: hu-en
+    label:
+      en_US: Hungary (EN)
+      zh_Hans: Hungary (EN)
+  - value: is-en
+    label:
+      en_US: Iceland (EN)
+      zh_Hans: Iceland (EN)
+  - value: in-en
+    label:
+      en_US: India (EN)
+      zh_Hans: India (EN)
+  - value: id-en
+    label:
+      en_US: Indonesia (EN)
+      zh_Hans: Indonesia (EN)
+  - value: ir-en
+    label:
+      en_US: Iran, Islamic Republic of (EN)
+      zh_Hans: Iran, Islamic Republic of (EN)
+  - value: iq-en
+    label:
+      en_US: Iraq (EN)
+      zh_Hans: Iraq (EN)
+  - value: ie-en
+    label:
+      en_US: Ireland (EN)
+      zh_Hans: Ireland (EN)
+  - value: im-en
+    label:
+      en_US: Isle of Man (EN)
+      zh_Hans: Isle of Man (EN)
+  - value: il-en
+    label:
+      en_US: Israel (EN)
+      zh_Hans: Israel (EN)
+  - value: it-en
+    label:
+      en_US: Italy (EN)
+      zh_Hans: Italy (EN)
+  - value: je-en
+    label:
+      en_US: Jersey (EN)
+      zh_Hans: Jersey (EN)
+  - value: jm-en
+    label:
+      en_US: Jamaica (EN)
+      zh_Hans: Jamaica (EN)
+  - value: jp-en
+    label:
+      en_US: Japan (EN)
+      zh_Hans: Japan (EN)
+  - value: jo-en
+    label:
+      en_US: Jordan (EN)
+      zh_Hans: Jordan (EN)
+  - value: kz-en
+    label:
+      en_US: Kazakhstan (EN)
+      zh_Hans: Kazakhstan (EN)
+  - value: ke-en
+    label:
+      en_US: Kenya (EN)
+      zh_Hans: Kenya (EN)
+  - value: ki-en
+    label:
+      en_US: Kiribati (EN)
+      zh_Hans: Kiribati (EN)
+  - value: kp-en
+    label:
+      en_US: Korea, Democratic People's Republic of (EN)
+      zh_Hans: Korea, Democratic People's Republic of (EN)
+  - value: kr-en
+    label:
+      en_US: Korea, Republic of (EN)
+      zh_Hans: Korea, Republic of (EN)
+  - value: kw-en
+    label:
+      en_US: Kuwait (EN)
+      zh_Hans: Kuwait (EN)
+  - value: kg-en
+    label:
+      en_US: Kyrgyzstan (EN)
+      zh_Hans: Kyrgyzstan (EN)
+  - value: la-en
+    label:
+      en_US: Lao People's Democratic Republic (EN)
+      zh_Hans: Lao People's Democratic Republic (EN)
+  - value: lv-en
+    label:
+      en_US: Latvia (EN)
+      zh_Hans: Latvia (EN)
+  - value: lb-en
+    label:
+      en_US: Lebanon (EN)
+      zh_Hans: Lebanon (EN)
+  - value: ls-en
+    label:
+      en_US: Lesotho (EN)
+      zh_Hans: Lesotho (EN)
+  - value: lr-en
+    label:
+      en_US: Liberia (EN)
+      zh_Hans: Liberia (EN)
+  - value: ly-en
+    label:
+      en_US: Libyan Arab Jamahiriya (EN)
+      zh_Hans: Libyan Arab Jamahiriya (EN)
+  - value: li-en
+    label:
+      en_US: Liechtenstein (EN)
+      zh_Hans: Liechtenstein (EN)
+  - value: lt-en
+    label:
+      en_US: Lithuania (EN)
+      zh_Hans: Lithuania (EN)
+  - value: lu-en
+    label:
+      en_US: Luxembourg (EN)
+      zh_Hans: Luxembourg (EN)
+  - value: mo-en
+    label:
+      en_US: Macao (EN)
+      zh_Hans: Macao (EN)
+  - value: mk-en
+    label:
+      en_US: Macedonia, the Former Yugosalv Republic of (EN)
+      zh_Hans: Macedonia, the Former Yugosalv Republic of (EN)
+  - value: mg-en
+    label:
+      en_US: Madagascar (EN)
+      zh_Hans: Madagascar (EN)
+  - value: mw-en
+    label:
+      en_US: Malawi (EN)
+      zh_Hans: Malawi (EN)
+  - value: my-en
+    label:
+      en_US: Malaysia (EN)
+      zh_Hans: Malaysia (EN)
+  - value: mv-en
+    label:
+      en_US: Maldives (EN)
+      zh_Hans: Maldives (EN)
+  - value: ml-en
+    label:
+      en_US: Mali (EN)
+      zh_Hans: Mali (EN)
+  - value: mt-en
+    label:
+      en_US: Malta (EN)
+      zh_Hans: Malta (EN)
+  - value: mh-en
+    label:
+      en_US: Marshall Islands (EN)
+      zh_Hans: Marshall Islands (EN)
+  - value: mq-en
+    label:
+      en_US: Martinique (EN)
+      zh_Hans: Martinique (EN)
+  - value: mr-en
+    label:
+      en_US: Mauritania (EN)
+      zh_Hans: Mauritania (EN)
+  - value: mu-en
+    label:
+      en_US: Mauritius (EN)
+      zh_Hans: Mauritius (EN)
+  - value: yt-en
+    label:
+      en_US: Mayotte (EN)
+      zh_Hans: Mayotte (EN)
+  - value: mx-en
+    label:
+      en_US: Mexico (EN)
+      zh_Hans: Mexico (EN)
+  - value: fm-en
+    label:
+      en_US: Micronesia, Federated States of (EN)
+      zh_Hans: Micronesia, Federated States of (EN)
+  - value: md-en
+    label:
+      en_US: Moldova, Republic of (EN)
+      zh_Hans: Moldova, Republic of (EN)
+  - value: mc-en
+    label:
+      en_US: Monaco (EN)
+      zh_Hans: Monaco (EN)
+  - value: mn-en
+    label:
+      en_US: Mongolia (EN)
+      zh_Hans: Mongolia (EN)
+  - value: me-en
+    label:
+      en_US: Montenegro (EN)
+      zh_Hans: Montenegro (EN)
+  - value: ms-en
+    label:
+      en_US: Montserrat (EN)
+      zh_Hans: Montserrat (EN)
+  - value: ma-en
+    label:
+      en_US: Morocco (EN)
+      zh_Hans: Morocco (EN)
+  - value: mz-en
+    label:
+      en_US: Mozambique (EN)
+      zh_Hans: Mozambique (EN)
+  - value: mm-en
+    label:
+      en_US: Myanmar (EN)
+      zh_Hans: Myanmar (EN)
+  - value: na-en
+    label:
+      en_US: Namibia (EN)
+      zh_Hans: Namibia (EN)
+  - value: nr-en
+    label:
+      en_US: Nauru (EN)
+      zh_Hans: Nauru (EN)
+  - value: np-en
+    label:
+      en_US: Nepal (EN)
+      zh_Hans: Nepal (EN)
+  - value: nl-en
+    label:
+      en_US: Netherlands (EN)
+      zh_Hans: Netherlands (EN)
+  - value: an-en
+    label:
+      en_US: Netherlands Antilles (EN)
+      zh_Hans: Netherlands Antilles (EN)
+  - value: nc-en
+    label:
+      en_US: New Caledonia (EN)
+      zh_Hans: New Caledonia (EN)
+  - value: nz-en
+    label:
+      en_US: New Zealand (EN)
+      zh_Hans: New Zealand (EN)
+  - value: ni-en
+    label:
+      en_US: Nicaragua (EN)
+      zh_Hans: Nicaragua (EN)
+  - value: ne-en
+    label:
+      en_US: Niger (EN)
+      zh_Hans: Niger (EN)
+  - value: ng-en
+    label:
+      en_US: Nigeria (EN)
+      zh_Hans: Nigeria (EN)
+  - value: nu-en
+    label:
+      en_US: Niue (EN)
+      zh_Hans: Niue (EN)
+  - value: nf-en
+    label:
+      en_US: Norfolk Island (EN)
+      zh_Hans: Norfolk Island (EN)
+  - value: mp-en
+    label:
+      en_US: Northern Mariana Islands (EN)
+      zh_Hans: Northern Mariana Islands (EN)
+  - value: no-en
+    label:
+      en_US: Norway (EN)
+      zh_Hans: Norway (EN)
+  - value: om-en
+    label:
+      en_US: Oman (EN)
+      zh_Hans: Oman (EN)
+  - value: pk-en
+    label:
+      en_US: Pakistan (EN)
+      zh_Hans: Pakistan (EN)
+  - value: pw-en
+    label:
+      en_US: Palau (EN)
+      zh_Hans: Palau (EN)
+  - value: ps-en
+    label:
+      en_US: Palestinian Territory, Occupied (EN)
+      zh_Hans: Palestinian Territory, Occupied (EN)
+  - value: pa-en
+    label:
+      en_US: Panama (EN)
+      zh_Hans: Panama (EN)
+  - value: pg-en
+    label:
+      en_US: Papua New Guinea (EN)
+      zh_Hans: Papua New Guinea (EN)
+  - value: py-en
+    label:
+      en_US: Paraguay (EN)
+      zh_Hans: Paraguay (EN)
+  - value: pe-en
+    label:
+      en_US: Peru (EN)
+      zh_Hans: Peru (EN)
+  - value: ph-en
+    label:
+      en_US: Philippines (EN)
+      zh_Hans: Philippines (EN)
+  - value: pn-en
+    label:
+      en_US: Pitcairn (EN)
+      zh_Hans: Pitcairn (EN)
+  - value: pl-en
+    label:
+      en_US: Poland (EN)
+      zh_Hans: Poland (EN)
+  - value: pt-en
+    label:
+      en_US: Portugal (EN)
+      zh_Hans: Portugal (EN)
+  - value: pr-en
+    label:
+      en_US: Puerto Rico (EN)
+      zh_Hans: Puerto Rico (EN)
+  - value: qa-en
+    label:
+      en_US: Qatar (EN)
+      zh_Hans: Qatar (EN)
+  - value: re-en
+    label:
+      en_US: Reunion (EN)
+      zh_Hans: Reunion (EN)
+  - value: ro-en
+    label:
+      en_US: Romania (EN)
+      zh_Hans: Romania (EN)
+  - value: ru-en
+    label:
+      en_US: Russian Federation (EN)
+      zh_Hans: Russian Federation (EN)
+  - value: rw-en
+    label:
+      en_US: Rwanda (EN)
+      zh_Hans: Rwanda (EN)
+  - value: sh-en
+    label:
+      en_US: Saint Helena (EN)
+      zh_Hans: Saint Helena (EN)
+  - value: kn-en
+    label:
+      en_US: Saint Kitts and Nevis (EN)
+      zh_Hans: Saint Kitts and Nevis (EN)
+  - value: lc-en
+    label:
+      en_US: Saint Lucia (EN)
+      zh_Hans: Saint Lucia (EN)
+  - value: pm-en
+    label:
+      en_US: Saint Pierre and Miquelon (EN)
+      zh_Hans: Saint Pierre and Miquelon (EN)
+  - value: vc-en
+    label:
+      en_US: Saint Vincent and the Grenadines (EN)
+      zh_Hans: Saint Vincent and the Grenadines (EN)
+  - value: ws-en
+    label:
+      en_US: Samoa (EN)
+      zh_Hans: Samoa (EN)
+  - value: sm-en
+    label:
+      en_US: San Marino (EN)
+      zh_Hans: San Marino (EN)
+  - value: st-en
+    label:
+      en_US: Sao Tome and Principe (EN)
+      zh_Hans: Sao Tome and Principe (EN)
+  - value: sa-en
+    label:
+      en_US: Saudi Arabia (EN)
+      zh_Hans: Saudi Arabia (EN)
+  - value: sn-en
+    label:
+      en_US: Senegal (EN)
+      zh_Hans: Senegal (EN)
+  - value: rs-en
+    label:
+      en_US: Serbia (EN)
+      zh_Hans: Serbia (EN)
+  - value: sc-en
+    label:
+      en_US: Seychelles (EN)
+      zh_Hans: Seychelles (EN)
+  - value: sl-en
+    label:
+      en_US: Sierra Leone (EN)
+      zh_Hans: Sierra Leone (EN)
+  - value: sg-en
+    label:
+      en_US: Singapore (EN)
+      zh_Hans: Singapore (EN)
+  - value: sk-en
+    label:
+      en_US: Slovakia (EN)
+      zh_Hans: Slovakia (EN)
+  - value: si-en
+    label:
+      en_US: Slovenia (EN)
+      zh_Hans: Slovenia (EN)
+  - value: sb-en
+    label:
+      en_US: Solomon Islands (EN)
+      zh_Hans: Solomon Islands (EN)
+  - value: so-en
+    label:
+      en_US: Somalia (EN)
+      zh_Hans: Somalia (EN)
+  - value: za-en
+    label:
+      en_US: South Africa (EN)
+      zh_Hans: South Africa (EN)
+  - value: gs-en
+    label:
+      en_US: South Georgia and the South Sandwich Islands (EN)
+      zh_Hans: South Georgia and the South Sandwich Islands (EN)
+  - value: es-en
+    label:
+      en_US: Spain (EN)
+      zh_Hans: Spain (EN)
+  - value: lk-en
+    label:
+      en_US: Sri Lanka (EN)
+      zh_Hans: Sri Lanka (EN)
+  - value: sd-en
+    label:
+      en_US: Sudan (EN)
+      zh_Hans: Sudan (EN)
+  - value: sr-en
+    label:
+      en_US: Suriname (EN)
+      zh_Hans: Suriname (EN)
+  - value: sj-en
+    label:
+      en_US: Svalbard and Jan Mayen (EN)
+      zh_Hans: Svalbard and Jan Mayen (EN)
+  - value: sz-en
+    label:
+      en_US: Swaziland (EN)
+      zh_Hans: Swaziland (EN)
+  - value: se-en
+    label:
+      en_US: Sweden (EN)
+      zh_Hans: Sweden (EN)
+  - value: ch-en
+    label:
+      en_US: Switzerland (EN)
+      zh_Hans: Switzerland (EN)
+  - value: sy-en
+    label:
+      en_US: Syrian Arab Republic (EN)
+      zh_Hans: Syrian Arab Republic (EN)
+  - value: tw-en
+    label:
+      en_US: Taiwan, Province of China (EN)
+      zh_Hans: Taiwan, Province of China (EN)
+  - value: tj-en
+    label:
+      en_US: Tajikistan (EN)
+      zh_Hans: Tajikistan (EN)
+  - value: tz-en
+    label:
+      en_US: Tanzania, United Republic of (EN)
+      zh_Hans: Tanzania, United Republic of (EN)
+  - value: th-en
+    label:
+      en_US: Thailand (EN)
+      zh_Hans: Thailand (EN)
+  - value: tl-en
+    label:
+      en_US: Timor-Leste (EN)
+      zh_Hans: Timor-Leste (EN)
+  - value: tg-en
+    label:
+      en_US: Togo (EN)
+      zh_Hans: Togo (EN)
+  - value: tk-en
+    label:
+      en_US: Tokelau (EN)
+      zh_Hans: Tokelau (EN)
+  - value: to-en
+    label:
+      en_US: Tonga (EN)
+      zh_Hans: Tonga (EN)
+  - value: tt-en
+    label:
+      en_US: Trinidad and Tobago (EN)
+      zh_Hans: Trinidad and Tobago (EN)
+  - value: tn-en
+    label:
+      en_US: Tunisia (EN)
+      zh_Hans: Tunisia (EN)
+  - value: tr-en
+    label:
+      en_US: Turkiye (EN)
+      zh_Hans: Turkiye (EN)
+  - value: tm-en
+    label:
+      en_US: Turkmenistan (EN)
+      zh_Hans: Turkmenistan (EN)
+  - value: tc-en
+    label:
+      en_US: Turks and Caicos Islands (EN)
+      zh_Hans: Turks and Caicos Islands (EN)
+  - value: tv-en
+    label:
+      en_US: Tuvalu (EN)
+      zh_Hans: Tuvalu (EN)
+  - value: ug-en
+    label:
+      en_US: Uganda (EN)
+      zh_Hans: Uganda (EN)
+  - value: ua-en
+    label:
+      en_US: Ukraine (EN)
+      zh_Hans: Ukraine (EN)
+  - value: ae-en
+    label:
+      en_US: United Arab Emirates (EN)
+      zh_Hans: United Arab Emirates (EN)
+  - value: uk-en
+    label:
+      en_US: United Kingdom (EN)
+      zh_Hans: United Kingdom (EN)
+  - value: gb-en
+    label:
+      en_US: United Kingdom (EN)
+      zh_Hans: United Kingdom (EN)
+  - value: us-en
+    label:
+      en_US: United States (EN)
+      zh_Hans: United States (EN)
+  - value: um-en
+    label:
+      en_US: United States Minor Outlying Islands (EN)
+      zh_Hans: United States Minor Outlying Islands (EN)
+  - value: uy-en
+    label:
+      en_US: Uruguay (EN)
+      zh_Hans: Uruguay (EN)
+  - value: uz-en
+    label:
+      en_US: Uzbekistan (EN)
+      zh_Hans: Uzbekistan (EN)
+  - value: vu-en
+    label:
+      en_US: Vanuatu (EN)
+      zh_Hans: Vanuatu (EN)
+  - value: ve-en
+    label:
+      en_US: Venezuela (EN)
+      zh_Hans: Venezuela (EN)
+  - value: vn-en
+    label:
+      en_US: Viet Nam (EN)
+      zh_Hans: Viet Nam (EN)
+  - value: vg-en
+    label:
+      en_US: Virgin Islands, British (EN)
+      zh_Hans: Virgin Islands, British (EN)
+  - value: vi-en
+    label:
+      en_US: Virgin Islands, U.S. (EN)
+      zh_Hans: Virgin Islands, U.S. (EN)
+  - value: wf-en
+    label:
+      en_US: Wallis and Futuna (EN)
+      zh_Hans: Wallis and Futuna (EN)
+  - value: eh-en
+    label:
+      en_US: Western Sahara (EN)
+      zh_Hans: Western Sahara (EN)
+  - value: ye-en
+    label:
+      en_US: Yemen (EN)
+      zh_Hans: Yemen (EN)
+  - value: zm-en
+    label:
+      en_US: Zambia (EN)
+      zh_Hans: Zambia (EN)
+  - value: zw-en
+    label:
+      en_US: Zimbabwe (EN)
+      zh_Hans: Zimbabwe (EN)
+- name: df
+  type: select
+  required: false
+  label:
+    en_US: Date Range
+    zh_Hans: 时间筛选
+  human_description:
+    en_US: Date Range parameter.
+    zh_Hans: 时间筛选 参数。
+  llm_description: Date Range parameter for the SERP request.
+  form: form
+  options:
+  - value: ''
+    label:
+      en_US: Any time
+      zh_Hans: Any time
+  - value: d
+    label:
+      en_US: Past day
+      zh_Hans: Past day
+  - value: w
+    label:
+      en_US: Past week
+      zh_Hans: Past week
+  - value: m
+    label:
+      en_US: Past month
+      zh_Hans: Past month
+  - value: y
+    label:
+      en_US: Past year
+      zh_Hans: Past year
+- name: kp
+  type: select
+  required: false
+  label:
+    en_US: Safe Search
+    zh_Hans: 安全等级
+  human_description:
+    en_US: Safe Search parameter.
+    zh_Hans: 安全等级 参数。
+  llm_description: Safe Search parameter for the SERP request.
+  form: form
+  options:
+  - value: '1'
+    label:
+      en_US: Strict
+      zh_Hans: Strict
+  - value: '-1'
+    label:
+      en_US: Moderate
+      zh_Hans: Moderate
+  - value: '-2'
+    label:
+      en_US: 'False'
+      zh_Hans: 'False'
+- name: start
+  type: number
+  required: false
+  label:
+    en_US: Start Position
+    zh_Hans: 起始条目
+  human_description:
+    en_US: Start Position parameter.
+    zh_Hans: 起始条目 参数。
+  llm_description: Start Position parameter for the SERP request.
+  form: form
+  default: 0
+- name: no_cache
+  type: boolean
+  required: false
+  label:
+    en_US: No Cache
+    zh_Hans: 禁用缓存
+  human_description:
+    en_US: When enabled, the adapter returns a fresh preview result.
+    zh_Hans: 开启后将请求即时结果，不使用缓存预览。
+  llm_description: No Cache parameter for the SERP request.
+  form: form
+  default: false
+extra:
+  python:
+    source: tools/duckduckgo_search.py

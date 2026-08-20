@@ -1,0 +1,70 @@
+identity:
+  name: google_lens_search
+  author: talordata
+  label:
+    en_US: Google Lens Search
+    zh_Hans: Google Lens Search
+description:
+  human:
+    en_US: Call the google_lens engine through Talordata SERP API.
+    zh_Hans: 通过 Talordata SERP API 调用 google_lens engine。
+  llm: Call Talordata SERP engine google_lens and return normalized or raw SERP results.
+parameters:
+- name: url
+  type: string
+  required: true
+  label:
+    en_US: Image URL
+    zh_Hans: 图片 URL
+  human_description:
+    en_US: Image URL parameter.
+    zh_Hans: 图片 URL 参数。
+  llm_description: Image URL parameter for the SERP request.
+  form: form
+- name: q
+  type: string
+  required: false
+  label:
+    en_US: Search Query
+    zh_Hans: 搜索关键词
+  human_description:
+    en_US: 'The search keyword used by the selected engine. Example: pizza.'
+    zh_Hans: 发送给当前搜索引擎的搜索关键词，例如 pizza。
+  llm_description: Search Query parameter for the SERP request.
+  form: form
+- name: safe
+  type: select
+  required: false
+  label:
+    en_US: Safe Search
+    zh_Hans: 安全搜索
+  human_description:
+    en_US: Safe Search parameter.
+    zh_Hans: 安全搜索 参数。
+  llm_description: Safe Search parameter for the SERP request.
+  form: form
+  default: 'off'
+  options:
+  - value: 'off'
+    label:
+      en_US: 'False'
+      zh_Hans: 'False'
+  - value: active
+    label:
+      en_US: Active
+      zh_Hans: Active
+- name: no_cache
+  type: boolean
+  required: false
+  label:
+    en_US: No Cache
+    zh_Hans: 禁用缓存
+  human_description:
+    en_US: When enabled, the adapter returns a fresh preview result.
+    zh_Hans: 开启后将请求即时结果，不使用缓存预览。
+  llm_description: No Cache parameter for the SERP request.
+  form: form
+  default: false
+extra:
+  python:
+    source: tools/google_lens_search.py

@@ -1,0 +1,29 @@
+# Python cache and test artifacts
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Local environments
+.env
+.venv/
+.venv*/
+venv/
+env/
+
+# Development-only files
+tests/
+docs/superpowers/
+scripts/publish_github_release.ps1
+*.difypkg
+
+# Editor and OS files
+.idea/
+.vscode/
+.git/
+.gitignore
+.DS_Store
+Thumbs.db

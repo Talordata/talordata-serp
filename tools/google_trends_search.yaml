@@ -1,0 +1,860 @@
+identity:
+  name: google_trends_search
+  author: talordata
+  label:
+    en_US: Google Trends Search
+    zh_Hans: Google Trends Search
+description:
+  human:
+    en_US: Call the google_trends engine through Talordata SERP API.
+    zh_Hans: 通过 Talordata SERP API 调用 google_trends engine。
+  llm: Call Talordata SERP engine google_trends and return normalized or raw SERP results.
+parameters:
+- name: q
+  type: string
+  required: true
+  label:
+    en_US: Search Query
+    zh_Hans: 搜索关键词
+  human_description:
+    en_US: Search Query parameter.
+    zh_Hans: 搜索关键词 参数。
+  llm_description: Search Query parameter for the SERP request.
+  form: form
+- name: geo
+  type: string
+  required: false
+  label:
+    en_US: Geo
+    zh_Hans: 地域
+  human_description:
+    en_US: Geo parameter.
+    zh_Hans: 地域 参数。
+  llm_description: Geo parameter for the SERP request.
+  form: form
+- name: hl
+  type: select
+  required: false
+  label:
+    en_US: Language
+    zh_Hans: 语言
+  human_description:
+    en_US: Language parameter.
+    zh_Hans: 语言 参数。
+  llm_description: Language parameter for the SERP request.
+  form: form
+  default: en
+  options:
+  - value: af
+    label:
+      en_US: Afrikaans
+      zh_Hans: Afrikaans
+  - value: ak
+    label:
+      en_US: Akan
+      zh_Hans: Akan
+  - value: ws
+    label:
+      en_US: Samoa
+      zh_Hans: Samoa
+  - value: am
+    label:
+      en_US: Amharic
+      zh_Hans: Amharic
+  - value: ar
+    label:
+      en_US: Arabic
+      zh_Hans: Arabic
+  - value: hy
+    label:
+      en_US: Armenian
+      zh_Hans: Armenian
+  - value: az
+    label:
+      en_US: Azerbaijani
+      zh_Hans: Azerbaijani
+  - value: ceb
+    label:
+      en_US: Binisaya
+      zh_Hans: Binisaya
+  - value: eu
+    label:
+      en_US: Basque
+      zh_Hans: Basque
+  - value: be
+    label:
+      en_US: Belarusian
+      zh_Hans: Belarusian
+  - value: bem
+    label:
+      en_US: Bemba
+      zh_Hans: Bemba
+  - value: bn
+    label:
+      en_US: Bengali
+      zh_Hans: Bengali
+  - value: bh
+    label:
+      en_US: Bihari
+      zh_Hans: Bihari
+  - value: xx-bork
+    label:
+      en_US: Bork, bork, bork!
+      zh_Hans: Bork, bork, bork!
+  - value: bs
+    label:
+      en_US: Bosnian
+      zh_Hans: Bosnian
+  - value: br
+    label:
+      en_US: Breton
+      zh_Hans: Breton
+  - value: bg
+    label:
+      en_US: Bulgarian
+      zh_Hans: Bulgarian
+  - value: bt
+    label:
+      en_US: Bhutanese
+      zh_Hans: Bhutanese
+  - value: km
+    label:
+      en_US: Cambodian
+      zh_Hans: Cambodian
+  - value: ca
+    label:
+      en_US: Catalan
+      zh_Hans: Catalan
+  - value: chr
+    label:
+      en_US: Cherokee
+      zh_Hans: Cherokee
+  - value: ny
+    label:
+      en_US: Chichewa
+      zh_Hans: Chichewa
+  - value: zh-cn
+    label:
+      en_US: Chinese (Simplified)
+      zh_Hans: Chinese (Simplified)
+  - value: zh-tw
+    label:
+      en_US: Chinese (Traditional)
+      zh_Hans: Chinese (Traditional)
+  - value: co
+    label:
+      en_US: Corsican
+      zh_Hans: Corsican
+  - value: hr
+    label:
+      en_US: Croatian
+      zh_Hans: Croatian
+  - value: cs
+    label:
+      en_US: Czech
+      zh_Hans: Czech
+  - value: da
+    label:
+      en_US: Danish
+      zh_Hans: Danish
+  - value: nl
+    label:
+      en_US: Dutch
+      zh_Hans: Dutch
+  - value: xx-elmer
+    label:
+      en_US: Elmer Fudd
+      zh_Hans: Elmer Fudd
+  - value: en
+    label:
+      en_US: English
+      zh_Hans: English
+  - value: eo
+    label:
+      en_US: Esperanto
+      zh_Hans: Esperanto
+  - value: et
+    label:
+      en_US: Estonian
+      zh_Hans: Estonian
+  - value: ee
+    label:
+      en_US: Ewe
+      zh_Hans: Ewe
+  - value: fo
+    label:
+      en_US: Faroese
+      zh_Hans: Faroese
+  - value: tl
+    label:
+      en_US: Filipino
+      zh_Hans: Filipino
+  - value: fi
+    label:
+      en_US: Finnish
+      zh_Hans: Finnish
+  - value: fr
+    label:
+      en_US: French
+      zh_Hans: French
+  - value: fy
+    label:
+      en_US: Frisian
+      zh_Hans: Frisian
+  - value: gaa
+    label:
+      en_US: Ga
+      zh_Hans: Ga
+  - value: gl
+    label:
+      en_US: Galician
+      zh_Hans: Galician
+  - value: ka
+    label:
+      en_US: Georgian
+      zh_Hans: Georgian
+  - value: de
+    label:
+      en_US: German
+      zh_Hans: German
+  - value: el
+    label:
+      en_US: Greek
+      zh_Hans: Greek
+  - value: kl
+    label:
+      en_US: Greenlandic
+      zh_Hans: Greenlandic
+  - value: gn
+    label:
+      en_US: Guarani
+      zh_Hans: Guarani
+  - value: gu
+    label:
+      en_US: Gujarati
+      zh_Hans: Gujarati
+  - value: xx-hacker
+    label:
+      en_US: Hacker
+      zh_Hans: Hacker
+  - value: ht
+    label:
+      en_US: Haitian Creole
+      zh_Hans: Haitian Creole
+  - value: ha
+    label:
+      en_US: Hausa
+      zh_Hans: Hausa
+  - value: haw
+    label:
+      en_US: Hawaiian
+      zh_Hans: Hawaiian
+  - value: iw
+    label:
+      en_US: Hebrew
+      zh_Hans: Hebrew
+  - value: he
+    label:
+      en_US: Hebrew
+      zh_Hans: Hebrew
+  - value: hi
+    label:
+      en_US: Hindi
+      zh_Hans: Hindi
+  - value: hu
+    label:
+      en_US: Hungarian
+      zh_Hans: Hungarian
+  - value: is
+    label:
+      en_US: Icelandic
+      zh_Hans: Icelandic
+  - value: ig
+    label:
+      en_US: Igbo
+      zh_Hans: Igbo
+  - value: id
+    label:
+      en_US: Indonesian
+      zh_Hans: Indonesian
+  - value: ia
+    label:
+      en_US: Interlingua
+      zh_Hans: Interlingua
+  - value: ga
+    label:
+      en_US: Irish
+      zh_Hans: Irish
+  - value: it
+    label:
+      en_US: Italian
+      zh_Hans: Italian
+  - value: ja
+    label:
+      en_US: Japanese
+      zh_Hans: Japanese
+  - value: jw
+    label:
+      en_US: Javanese
+      zh_Hans: Javanese
+  - value: kn
+    label:
+      en_US: Kannada
+      zh_Hans: Kannada
+  - value: kk
+    label:
+      en_US: Kazakh
+      zh_Hans: Kazakh
+  - value: rw
+    label:
+      en_US: Kinyarwanda
+      zh_Hans: Kinyarwanda
+  - value: rn
+    label:
+      en_US: Kirundi
+      zh_Hans: Kirundi
+  - value: xx-klingon
+    label:
+      en_US: Klingon
+      zh_Hans: Klingon
+  - value: kg
+    label:
+      en_US: Kongo
+      zh_Hans: Kongo
+  - value: ko
+    label:
+      en_US: Korean
+      zh_Hans: Korean
+  - value: kri
+    label:
+      en_US: Krio (Sierra Leone)
+      zh_Hans: Krio (Sierra Leone)
+  - value: ku
+    label:
+      en_US: Kurdish
+      zh_Hans: Kurdish
+  - value: ckb
+    label:
+      en_US: Kurdish (Soranî)
+      zh_Hans: Kurdish (Soranî)
+  - value: ky
+    label:
+      en_US: Kyrgyz
+      zh_Hans: Kyrgyz
+  - value: lo
+    label:
+      en_US: Laothian
+      zh_Hans: Laothian
+  - value: la
+    label:
+      en_US: Latin
+      zh_Hans: Latin
+  - value: lv
+    label:
+      en_US: Latvian
+      zh_Hans: Latvian
+  - value: ln
+    label:
+      en_US: Lingala
+      zh_Hans: Lingala
+  - value: lt
+    label:
+      en_US: Lithuanian
+      zh_Hans: Lithuanian
+  - value: loz
+    label:
+      en_US: Lozi
+      zh_Hans: Lozi
+  - value: lg
+    label:
+      en_US: Luganda
+      zh_Hans: Luganda
+  - value: ach
+    label:
+      en_US: Luo
+      zh_Hans: Luo
+  - value: mk
+    label:
+      en_US: Macedonian
+      zh_Hans: Macedonian
+  - value: mg
+    label:
+      en_US: Malagasy
+      zh_Hans: Malagasy
+  - value: ms
+    label:
+      en_US: Malay
+      zh_Hans: Malay
+  - value: ml
+    label:
+      en_US: Malayalam
+      zh_Hans: Malayalam
+  - value: mt
+    label:
+      en_US: Maltese
+      zh_Hans: Maltese
+  - value: mv
+    label:
+      en_US: Maldives
+      zh_Hans: Maldives
+  - value: mi
+    label:
+      en_US: Maori
+      zh_Hans: Maori
+  - value: mr
+    label:
+      en_US: Marathi
+      zh_Hans: Marathi
+  - value: mfe
+    label:
+      en_US: Mauritian Creole
+      zh_Hans: Mauritian Creole
+  - value: mo
+    label:
+      en_US: Moldavian
+      zh_Hans: Moldavian
+  - value: mn
+    label:
+      en_US: Mongolian
+      zh_Hans: Mongolian
+  - value: sr-me
+    label:
+      en_US: Montenegrin
+      zh_Hans: Montenegrin
+  - value: my
+    label:
+      en_US: Myanmar
+      zh_Hans: Myanmar
+  - value: ne
+    label:
+      en_US: Nepali
+      zh_Hans: Nepali
+  - value: pcm
+    label:
+      en_US: Nigerian Pidgin
+      zh_Hans: Nigerian Pidgin
+  - value: nso
+    label:
+      en_US: Northern Sotho
+      zh_Hans: Northern Sotho
+  - value: 'no'
+    label:
+      en_US: Norwegian
+      zh_Hans: Norwegian
+  - value: nn
+    label:
+      en_US: Norwegian (Nynorsk)
+      zh_Hans: Norwegian (Nynorsk)
+  - value: oc
+    label:
+      en_US: Occitan
+      zh_Hans: Occitan
+  - value: or
+    label:
+      en_US: Oriya
+      zh_Hans: Oriya
+  - value: om
+    label:
+      en_US: Oromo
+      zh_Hans: Oromo
+  - value: ps
+    label:
+      en_US: Pashto
+      zh_Hans: Pashto
+  - value: fa
+    label:
+      en_US: Persian
+      zh_Hans: Persian
+  - value: xx-pirate
+    label:
+      en_US: Pirate
+      zh_Hans: Pirate
+  - value: pl
+    label:
+      en_US: Polish
+      zh_Hans: Polish
+  - value: pt
+    label:
+      en_US: Portuguese
+      zh_Hans: Portuguese
+  - value: pt-br
+    label:
+      en_US: Portuguese (Brazil)
+      zh_Hans: Portuguese (Brazil)
+  - value: pt-pt
+    label:
+      en_US: Portuguese (Portugal)
+      zh_Hans: Portuguese (Portugal)
+  - value: pa
+    label:
+      en_US: Punjabi
+      zh_Hans: Punjabi
+  - value: qu
+    label:
+      en_US: Quechua
+      zh_Hans: Quechua
+  - value: ro
+    label:
+      en_US: Romanian
+      zh_Hans: Romanian
+  - value: rm
+    label:
+      en_US: Romansh
+      zh_Hans: Romansh
+  - value: nyn
+    label:
+      en_US: Runyakitara
+      zh_Hans: Runyakitara
+  - value: ru
+    label:
+      en_US: Russian
+      zh_Hans: Russian
+  - value: gd
+    label:
+      en_US: Scots Gaelic
+      zh_Hans: Scots Gaelic
+  - value: sr
+    label:
+      en_US: Serbian
+      zh_Hans: Serbian
+  - value: sh
+    label:
+      en_US: Serbo-Croatian
+      zh_Hans: Serbo-Croatian
+  - value: st
+    label:
+      en_US: Sesotho
+      zh_Hans: Sesotho
+  - value: tn
+    label:
+      en_US: Setswana
+      zh_Hans: Setswana
+  - value: crs
+    label:
+      en_US: Seychellois Creole
+      zh_Hans: Seychellois Creole
+  - value: sn
+    label:
+      en_US: Shona
+      zh_Hans: Shona
+  - value: sd
+    label:
+      en_US: Sindhi
+      zh_Hans: Sindhi
+  - value: si
+    label:
+      en_US: Sinhalese
+      zh_Hans: Sinhalese
+  - value: sk
+    label:
+      en_US: Slovak
+      zh_Hans: Slovak
+  - value: sl
+    label:
+      en_US: Slovenian
+      zh_Hans: Slovenian
+  - value: so
+    label:
+      en_US: Somali
+      zh_Hans: Somali
+  - value: es
+    label:
+      en_US: Spanish
+      zh_Hans: Spanish
+  - value: es-419
+    label:
+      en_US: Spanish (Latin American)
+      zh_Hans: Spanish (Latin American)
+  - value: su
+    label:
+      en_US: Sundanese
+      zh_Hans: Sundanese
+  - value: sw
+    label:
+      en_US: Swahili
+      zh_Hans: Swahili
+  - value: sv
+    label:
+      en_US: Swedish
+      zh_Hans: Swedish
+  - value: tg
+    label:
+      en_US: Tajik
+      zh_Hans: Tajik
+  - value: ta
+    label:
+      en_US: Tamil
+      zh_Hans: Tamil
+  - value: tt
+    label:
+      en_US: Tatar
+      zh_Hans: Tatar
+  - value: te
+    label:
+      en_US: Telugu
+      zh_Hans: Telugu
+  - value: th
+    label:
+      en_US: Thai
+      zh_Hans: Thai
+  - value: ti
+    label:
+      en_US: Tigrinya
+      zh_Hans: Tigrinya
+  - value: to
+    label:
+      en_US: Tonga
+      zh_Hans: Tonga
+  - value: lua
+    label:
+      en_US: Tshiluba
+      zh_Hans: Tshiluba
+  - value: tum
+    label:
+      en_US: Tumbuka
+      zh_Hans: Tumbuka
+  - value: tr
+    label:
+      en_US: Turkish
+      zh_Hans: Turkish
+  - value: tk
+    label:
+      en_US: Turkmen
+      zh_Hans: Turkmen
+  - value: tw
+    label:
+      en_US: Twi
+      zh_Hans: Twi
+  - value: ug
+    label:
+      en_US: Uighur
+      zh_Hans: Uighur
+  - value: uk
+    label:
+      en_US: Ukrainian
+      zh_Hans: Ukrainian
+  - value: ur
+    label:
+      en_US: Urdu
+      zh_Hans: Urdu
+  - value: uz
+    label:
+      en_US: Uzbek
+      zh_Hans: Uzbek
+  - value: vu
+    label:
+      en_US: Vanuatu
+      zh_Hans: Vanuatu
+  - value: vi
+    label:
+      en_US: Vietnamese
+      zh_Hans: Vietnamese
+  - value: cy
+    label:
+      en_US: Welsh
+      zh_Hans: Welsh
+  - value: wo
+    label:
+      en_US: Wolof
+      zh_Hans: Wolof
+  - value: xh
+    label:
+      en_US: Xhosa
+      zh_Hans: Xhosa
+  - value: yi
+    label:
+      en_US: Yiddish
+      zh_Hans: Yiddish
+  - value: yo
+    label:
+      en_US: Yoruba
+      zh_Hans: Yoruba
+  - value: zu
+    label:
+      en_US: Zulu
+      zh_Hans: Zulu
+- name: data_type
+  type: select
+  required: false
+  label:
+    en_US: Data type
+    zh_Hans: 数据类型
+  human_description:
+    en_US: Data type parameter.
+    zh_Hans: 数据类型 参数。
+  llm_description: Data type parameter for the SERP request.
+  form: form
+  default: TIMESERIES
+  options:
+  - value: TIMESERIES
+    label:
+      en_US: Interest over time
+      zh_Hans: Interest over time
+  - value: GEO_MAP
+    label:
+      en_US: Interest by region
+      zh_Hans: Interest by region
+  - value: GEO_MAP_0
+    label:
+      en_US: Interest by sub-region
+      zh_Hans: Interest by sub-region
+  - value: RELATED_TOPICS
+    label:
+      en_US: Related topics
+      zh_Hans: Related topics
+  - value: RELATED_QUERIES
+    label:
+      en_US: Related queries
+      zh_Hans: Related queries
+- name: region
+  type: select
+  required: false
+  label:
+    en_US: Region
+    zh_Hans: 地区
+  human_description:
+    en_US: Region parameter.
+    zh_Hans: 地区 参数。
+  llm_description: Region parameter for the SERP request.
+  form: form
+  default: COUNTRY
+  options:
+  - value: COUNTRY
+    label:
+      en_US: Country
+      zh_Hans: Country
+  - value: REGION
+    label:
+      en_US: Region
+      zh_Hans: Region
+  - value: DMA
+    label:
+      en_US: DMA
+      zh_Hans: DMA
+  - value: CITY
+    label:
+      en_US: City
+      zh_Hans: City
+- name: no_cache
+  type: boolean
+  required: false
+  label:
+    en_US: No Cache
+    zh_Hans: 禁用缓存
+  human_description:
+    en_US: No Cache parameter.
+    zh_Hans: 禁用缓存 参数。
+  llm_description: No Cache parameter for the SERP request.
+  form: form
+  default: false
+- name: date
+  type: string
+  required: false
+  label:
+    en_US: Date range
+    zh_Hans: 时间范围
+  human_description:
+    en_US: Date range parameter.
+    zh_Hans: 时间范围 参数。
+  llm_description: Date range parameter for the SERP request.
+  form: form
+- name: cat
+  type: select
+  required: false
+  label:
+    en_US: Category ID
+    zh_Hans: 分类 ID
+  human_description:
+    en_US: Category ID parameter.
+    zh_Hans: 分类 ID 参数。
+  llm_description: Category ID parameter for the SERP request.
+  form: form
+  default: '0'
+  options:
+  - value: '0'
+    label:
+      en_US: All categories
+      zh_Hans: All categories
+  - value: '3'
+    label:
+      en_US: Arts & Entertainment
+      zh_Hans: Arts & Entertainment
+  - value: '5'
+    label:
+      en_US: Computers & Electronics
+      zh_Hans: Computers & Electronics
+  - value: '7'
+    label:
+      en_US: Finance
+      zh_Hans: Finance
+  - value: '8'
+    label:
+      en_US: Food & Drink
+      zh_Hans: Food & Drink
+  - value: '11'
+    label:
+      en_US: Home & Garden
+      zh_Hans: Home & Garden
+  - value: '12'
+    label:
+      en_US: Internet & Telecom
+      zh_Hans: Internet & Telecom
+  - value: '13'
+    label:
+      en_US: Jobs & Education
+      zh_Hans: Jobs & Education
+  - value: '14'
+    label:
+      en_US: Law & Government
+      zh_Hans: Law & Government
+  - value: '16'
+    label:
+      en_US: News
+      zh_Hans: News
+- name: gprop
+  type: select
+  required: false
+  label:
+    en_US: Property
+    zh_Hans: 属性
+  human_description:
+    en_US: Property parameter.
+    zh_Hans: 属性 参数。
+  llm_description: Property parameter for the SERP request.
+  form: form
+  options:
+  - value: ''
+    label:
+      en_US: Web
+      zh_Hans: Web
+  - value: images
+    label:
+      en_US: Images
+      zh_Hans: Images
+  - value: news
+    label:
+      en_US: News
+      zh_Hans: News
+  - value: froogle
+    label:
+      en_US: Shopping
+      zh_Hans: Shopping
+  - value: youtube
+    label:
+      en_US: YouTube
+      zh_Hans: YouTube
+- name: tz
+  type: string
+  required: false
+  label:
+    en_US: Timezone offset
+    zh_Hans: 时区偏移
+  human_description:
+    en_US: Timezone offset parameter.
+    zh_Hans: 时区偏移 参数。
+  llm_description: Timezone offset parameter for the SERP request.
+  form: form
+  default: '0'
+extra:
+  python:
+    source: tools/google_trends_search.py
