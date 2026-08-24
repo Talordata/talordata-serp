@@ -85,7 +85,6 @@ Supported parameters:
 - `first`
 - `adlt`
 - `imagesize`
-- `no_cache`
 
 ### **Raw SERP Request**
 

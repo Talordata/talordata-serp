@@ -1839,18 +1839,6 @@ parameters:
     label:
       en_US: Car
       zh_Hans: Car
-- name: no_cache
-  type: boolean
-  required: false
-  label:
-    en_US: No Cache
-    zh_Hans: 禁用缓存
-  human_description:
-    en_US: No Cache parameter.
-    zh_Hans: 禁用缓存 参数。
-  llm_description: No Cache parameter for the SERP request.
-  form: form
-  default: false
 extra:
   python:
     source: tools/google_play_games_search.py

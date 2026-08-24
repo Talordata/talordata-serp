@@ -31,20 +31,6 @@ def mask_api_key(api_key: str) -> str:
     return f"{api_key[:4]}...{api_key[-4:]}"
 
 
-def parse_bool(value: Any, default: bool = False) -> bool:
-    if value in (None, ""):
-        return default
-    if isinstance(value, bool):
-        return value
-    if isinstance(value, str):
-        normalized = value.strip().lower()
-        if normalized in {"true", "1", "yes", "y", "on"}:
-            return True
-        if normalized in {"false", "0", "no", "n", "off"}:
-            return False
-    return bool(value)
-
-
 def build_bing_image_params(tool_parameters: dict[str, Any]) -> dict[str, Any]:
     query = str(tool_parameters.get("q") or "").strip()
     if not query:
@@ -58,7 +44,6 @@ def build_bing_image_params(tool_parameters: dict[str, Any]) -> dict[str, Any]:
         "mkt": tool_parameters.get("mkt") or "en-us",
         "count": int(tool_parameters.get("count") or 10),
         "first": int(tool_parameters.get("first") or 1),
-        "no_cache": parse_bool(tool_parameters.get("no_cache")),
     }
 
     for key in SUPPORTED_FILTERS:

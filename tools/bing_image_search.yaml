@@ -150,18 +150,6 @@ parameters:
           en_US: Large
           zh_Hans: 大
     form: form
-  - name: no_cache
-    type: boolean
-    required: false
-    default: false
-    label:
-      en_US: No Cache
-      zh_Hans: 不使用缓存
-    human_description:
-      en_US: Bypass cached SERP results when supported.
-      zh_Hans: 在支持时绕过缓存的 SERP 结果。
-    llm_description: Bypass cached SERP results when supported.
-    form: form
 extra:
   python:
     source: tools/bing_image_search.py

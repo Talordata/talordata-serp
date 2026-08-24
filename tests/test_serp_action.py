@@ -30,9 +30,23 @@ def test_build_action_params_sets_engine_and_query_field():
         "engine": "yandex",
         "text": "coffee",
         "lang": "en",
-        "no_cache": False,
         "p": 2,
     }
+
+
+def test_build_action_params_does_not_send_no_cache():
+    action = SerpAction(
+        tool_name="google_search",
+        engine="google",
+        label="Google Search",
+        query_field="q",
+        result_type="web",
+        source="tools/google_search.py",
+    )
+
+    params = build_action_params(action, {"q": "coffee", "no_cache": True})
+
+    assert "no_cache" not in params
 
 
 def test_build_action_params_ignores_stale_params_json_for_generated_actions():

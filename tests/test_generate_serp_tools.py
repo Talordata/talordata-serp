@@ -21,7 +21,7 @@ def test_generated_tool_config_contains_schema_parameters():
     assert "q" in names
     assert "gl" in names
     assert "hl" in names
-    assert "no_cache" in names
+    assert "no_cache" not in names
     assert "params_json" not in names
 
 
@@ -69,6 +69,14 @@ def test_search_tool_yamls_do_not_expose_params_json():
         names = [param["name"] for param in config["parameters"]]
 
         assert "params_json" not in names, action.tool_name
+
+
+def test_search_tool_yamls_do_not_expose_no_cache():
+    for action in ACTIONS:
+        config = yaml.safe_load(Path(f"tools/{action.tool_name}.yaml").read_text(encoding="utf-8"))
+        names = [param["name"] for param in config["parameters"]]
+
+        assert "no_cache" not in names, action.tool_name
 
 
 def test_generated_files_are_registered_in_provider():

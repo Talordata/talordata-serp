@@ -98,9 +98,9 @@ def build_action_params(action: SerpAction, tool_parameters: dict[str, Any]) -> 
 
     params: dict[str, Any] = {"engine": action.engine, action.query_field: query}
     for key, value in tool_parameters.items():
-        if key in {"engine", "params_json", action.query_field} or value in (None, ""):
+        if key in {"engine", "params_json", action.query_field, "no_cache"} or value in (None, ""):
             continue
-        if key == "no_cache" or isinstance(value, bool):
+        if isinstance(value, bool):
             params[key] = parse_bool(value)
         else:
             params[key] = value

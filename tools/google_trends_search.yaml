@@ -735,18 +735,6 @@ parameters:
     label:
       en_US: City
       zh_Hans: City
-- name: no_cache
-  type: boolean
-  required: false
-  label:
-    en_US: No Cache
-    zh_Hans: 禁用缓存
-  human_description:
-    en_US: No Cache parameter.
-    zh_Hans: 禁用缓存 参数。
-  llm_description: No Cache parameter for the SERP request.
-  form: form
-  default: false
 - name: date
   type: string
   required: false

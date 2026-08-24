@@ -30,14 +30,13 @@ def test_build_bing_image_params_maps_defaults():
         "mkt": "en-us",
         "count": 10,
         "first": 1,
-        "no_cache": False,
     }
 
 
-def test_build_bing_image_params_parses_no_cache_strings():
-    assert build_bing_image_params({"q": "coffee", "no_cache": "False"})["no_cache"] is False
-    assert build_bing_image_params({"q": "coffee", "no_cache": "0"})["no_cache"] is False
-    assert build_bing_image_params({"q": "coffee", "no_cache": "true"})["no_cache"] is True
+def test_build_bing_image_params_does_not_send_no_cache():
+    params = build_bing_image_params({"q": "coffee", "no_cache": True})
+
+    assert "no_cache" not in params
 
 
 def test_build_bing_image_params_keeps_supported_filters():
@@ -57,7 +56,6 @@ def test_build_bing_image_params_keeps_supported_filters():
             "face": "+filterui:face-face",
             "binglicense": "+filterui:license-L1",
             "bingage": "lt10080",
-            "no_cache": True,
         }
     )
 
@@ -67,7 +65,6 @@ def test_build_bing_image_params_keeps_supported_filters():
     assert params["first"] == 11
     assert params["adlt"] == "strict"
     assert params["imagesize"] == "+filterui:imagesize-large"
-    assert params["no_cache"] is True
 
 
 def test_build_bing_image_params_rejects_empty_query():

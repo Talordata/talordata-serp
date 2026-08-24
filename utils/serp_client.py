@@ -45,7 +45,7 @@ class SerpClient:
             headers={
                 "Authorization": f"Bearer {self.api_key}",
                 "Origin": "dify",
-                "User-Agent": "Talordata-Dify-Plugin/0.1.12",
+                "User-Agent": "Talordata-Dify-Plugin/0.1.13",
                 "Accept": "application/json",
                 "Content-Type": "application/x-www-form-urlencoded",
             },

@@ -679,18 +679,6 @@ parameters:
     label:
       en_US: Time Series
       zh_Hans: Time Series
-- name: no_cache
-  type: boolean
-  required: false
-  label:
-    en_US: No Cache
-    zh_Hans: 禁用缓存
-  human_description:
-    en_US: When enabled, the adapter returns a fresh preview result.
-    zh_Hans: 开启后将请求即时结果，不使用缓存预览。
-  llm_description: No Cache parameter for the SERP request.
-  form: form
-  default: false
 extra:
   python:
     source: tools/google_finance_search.py
